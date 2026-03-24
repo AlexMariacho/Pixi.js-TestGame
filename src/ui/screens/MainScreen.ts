@@ -11,16 +11,43 @@ type MainState = 'dispatcher' | 'meaning';
 const LEFT_ARROW_BOUNDS = { x: 521, y: 570, width: 50, height: 50 };
 const RIGHT_ARROW_BOUNDS = { x: 869, y: 570, width: 50, height: 50 };
 const SELECT_BUTTON_BOUNDS = { x: 595, y: 560, width: 250, height: 70 };
+const TITLE_BOUNDS = { x: 521, y: 400 };
+const SELECT_BUTTON_LABEL_BOUNDS = { x: 638, y: 582 };
 const DISPATCHER_ROLE_BOUNDS = { x: 627, y: 469 };
 const MEANING_ROLE_BOUNDS = { x: 596, y: 469 };
 
+const TITLE_TEXT = 'ДОБРЫЙ ВЕЧЕР';
+const SELECT_BUTTON_TEXT = 'ВЫБРАТЬ';
+const DISPATCHER_ROLE_TEXT = 'я диспетчер';
+const MEANING_ROLE_TEXT = 'а что это значит?';
+
 export class MainScreen extends BaseScreen {
+  private readonly titleLabel = new Text({
+    text: TITLE_TEXT,
+    style: {
+      fontFamily: FIGMA_FONTS.heading,
+      fontSize: 48,
+      fill: FIGMA_COLORS.textDark,
+      fontWeight: '400',
+    },
+  });
+
   private readonly roleLabel = new Text({
-    text: 'я диспетчер',
+    text: DISPATCHER_ROLE_TEXT,
     style: {
       fontFamily: FIGMA_FONTS.body,
       fontSize: 48,
       fill: FIGMA_COLORS.textDark,
+      fontWeight: '400',
+    },
+  });
+
+  private readonly selectButtonLabel = new Text({
+    text: SELECT_BUTTON_TEXT,
+    style: {
+      fontFamily: FIGMA_FONTS.heading,
+      fontSize: 32,
+      fill: FIGMA_COLORS.textLight,
       fontWeight: '400',
     },
   });
@@ -37,7 +64,10 @@ export class MainScreen extends BaseScreen {
   }
 
   build(): void {
-    this.view.addChild(this.desktop1Layer, this.desktop2Layer, this.roleLabel);
+    this.titleLabel.position.set(TITLE_BOUNDS.x, TITLE_BOUNDS.y);
+    this.selectButtonLabel.position.set(SELECT_BUTTON_LABEL_BOUNDS.x, SELECT_BUTTON_LABEL_BOUNDS.y);
+
+    this.view.addChild(this.desktop1Layer, this.desktop2Layer, this.titleLabel, this.roleLabel, this.selectButtonLabel);
 
     this.view.addChild(
       createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState()),
@@ -68,7 +98,7 @@ export class MainScreen extends BaseScreen {
     this.desktop1Layer.visible = isDispatcher;
     this.desktop2Layer.visible = !isDispatcher;
 
-    this.roleLabel.text = isDispatcher ? 'я диспетчер' : 'а что это значит?';
+    this.roleLabel.text = isDispatcher ? DISPATCHER_ROLE_TEXT : MEANING_ROLE_TEXT;
     this.roleLabel.position.set(
       isDispatcher ? DISPATCHER_ROLE_BOUNDS.x : MEANING_ROLE_BOUNDS.x,
       isDispatcher ? DISPATCHER_ROLE_BOUNDS.y : MEANING_ROLE_BOUNDS.y,

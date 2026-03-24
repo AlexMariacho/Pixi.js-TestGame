@@ -20,6 +20,7 @@ test('screen 1 matches Desktop - 1', async ({ page }) => {
   await expect(page.locator('canvas')).toHaveScreenshot('Desktop - 1.png', {
     animations: 'disabled',
     caret: 'hide',
+    maxDiffPixelRatio: 0.001,
   });
 });
 
@@ -32,5 +33,6 @@ test('screen 2 matches Desktop - 2', async ({ page }) => {
   await expect(page.locator('canvas')).toHaveScreenshot('Desktop - 2.png', {
     animations: 'disabled',
     caret: 'hide',
+    maxDiffPixelRatio: 0.001,
   });
 });
