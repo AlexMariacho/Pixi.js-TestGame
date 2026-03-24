@@ -1,4 +1,4 @@
-import { Container, Text } from 'pixi.js';
+import { Container, Graphics, Text } from 'pixi.js';
 import type { UIManager } from '../manager/UIManager';
 import { SCREEN_IDS } from '../manager/screenIds';
 import { BaseScreen } from './BaseScreen';
@@ -54,13 +54,32 @@ export class MainScreen extends BaseScreen {
 
   private readonly desktop1Layer: Container;
   private readonly desktop2Layer: Container;
+  private readonly desktop1LeftArrowSprite: Container | null;
+  private readonly desktop1RightArrowSprite: Container | null;
+  private readonly desktop1SelectButtonSprite: Container | null;
+  private readonly desktop2LeftArrowSprite: Container | null;
+  private readonly desktop2RightArrowSprite: Container | null;
+  private readonly desktop2SelectButtonSprite: Container | null;
+  private readonly desktop1ClickAreas: Graphics[] = [];
+  private readonly desktop2ClickAreas: Graphics[] = [];
   private selectedState: MainState = 'dispatcher';
 
   constructor(private readonly uiManager: UIManager) {
     super();
 
-    this.desktop1Layer = DESKTOP_1.buildScene().container;
-    this.desktop2Layer = DESKTOP_2.buildScene().container;
+    const desktop1Scene = DESKTOP_1.buildScene();
+    const desktop2Scene = DESKTOP_2.buildScene();
+
+    this.desktop1Layer = desktop1Scene.container;
+    this.desktop2Layer = desktop2Scene.container;
+
+    this.desktop1LeftArrowSprite = desktop1Scene.nodes.get(DESKTOP_1.elements.leftArrowGroup)?.sprite ?? null;
+    this.desktop1RightArrowSprite = desktop1Scene.nodes.get(DESKTOP_1.elements.rightArrowGroup)?.sprite ?? null;
+    this.desktop1SelectButtonSprite = desktop1Scene.nodes.get(DESKTOP_1.elements.selectButtonRect)?.sprite ?? null;
+
+    this.desktop2LeftArrowSprite = desktop2Scene.nodes.get(DESKTOP_2.elements.leftArrowGroup)?.sprite ?? null;
+    this.desktop2RightArrowSprite = desktop2Scene.nodes.get(DESKTOP_2.elements.rightArrowGroup)?.sprite ?? null;
+    this.desktop2SelectButtonSprite = desktop2Scene.nodes.get(DESKTOP_2.elements.selectButtonRect)?.sprite ?? null;
   }
 
   build(): void {
@@ -69,10 +88,24 @@ export class MainScreen extends BaseScreen {
 
     this.view.addChild(this.desktop1Layer, this.desktop2Layer, this.titleLabel, this.roleLabel, this.selectButtonLabel);
 
+    const desktop1LeftArrowArea = createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState(), this.desktop1LeftArrowSprite ? { animateTarget: this.desktop1LeftArrowSprite } : undefined);
+    const desktop1RightArrowArea = createClickArea(RIGHT_ARROW_BOUNDS, () => this.toggleState(), this.desktop1RightArrowSprite ? { animateTarget: this.desktop1RightArrowSprite } : undefined);
+    const desktop1SelectButtonArea = createClickArea(SELECT_BUTTON_BOUNDS, () => this.selectCurrentState(), this.desktop1SelectButtonSprite ? { animateTarget: this.desktop1SelectButtonSprite } : undefined);
+
+    const desktop2LeftArrowArea = createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState(), this.desktop2LeftArrowSprite ? { animateTarget: this.desktop2LeftArrowSprite } : undefined);
+    const desktop2RightArrowArea = createClickArea(RIGHT_ARROW_BOUNDS, () => this.toggleState(), this.desktop2RightArrowSprite ? { animateTarget: this.desktop2RightArrowSprite } : undefined);
+    const desktop2SelectButtonArea = createClickArea(SELECT_BUTTON_BOUNDS, () => this.selectCurrentState(), this.desktop2SelectButtonSprite ? { animateTarget: this.desktop2SelectButtonSprite } : undefined);
+
+    this.desktop1ClickAreas.push(desktop1LeftArrowArea, desktop1RightArrowArea, desktop1SelectButtonArea);
+    this.desktop2ClickAreas.push(desktop2LeftArrowArea, desktop2RightArrowArea, desktop2SelectButtonArea);
+
     this.view.addChild(
-      createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState()),
-      createClickArea(RIGHT_ARROW_BOUNDS, () => this.toggleState()),
-      createClickArea(SELECT_BUTTON_BOUNDS, () => this.selectCurrentState()),
+      desktop1LeftArrowArea,
+      desktop1RightArrowArea,
+      desktop1SelectButtonArea,
+      desktop2LeftArrowArea,
+      desktop2RightArrowArea,
+      desktop2SelectButtonArea,
     );
 
     this.syncState();
@@ -97,6 +130,12 @@ export class MainScreen extends BaseScreen {
 
     this.desktop1Layer.visible = isDispatcher;
     this.desktop2Layer.visible = !isDispatcher;
+    for (const area of this.desktop1ClickAreas) {
+      area.visible = isDispatcher;
+    }
+    for (const area of this.desktop2ClickAreas) {
+      area.visible = !isDispatcher;
+    }
 
     this.roleLabel.text = isDispatcher ? DISPATCHER_ROLE_TEXT : MEANING_ROLE_TEXT;
     this.roleLabel.position.set(
