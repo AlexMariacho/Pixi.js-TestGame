@@ -5,6 +5,7 @@ import { MainScreen } from '../ui/screens/MainScreen';
 import { DispatcherResultScreen } from '../ui/screens/DispatcherResultScreen';
 import { MeaningResultScreen } from '../ui/screens/MeaningResultScreen';
 import { FIGMA_COLORS, FIGMA_LAYOUT } from '../ui/components/designTokens';
+import { preloadFigmaCsvSvgAssets } from '../ui/components/figmaCsvScene';
 
 export type AppContext = {
   app: Application;
@@ -12,6 +13,8 @@ export type AppContext = {
 };
 
 export async function createApp(container: HTMLElement = document.body): Promise<AppContext> {
+  await preloadFigmaCsvSvgAssets();
+
   const app = new Application();
 
   await app.init({

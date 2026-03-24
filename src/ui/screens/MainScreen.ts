@@ -1,9 +1,9 @@
-import { Text } from 'pixi.js';
+import { Container, Text } from 'pixi.js';
 import type { UIManager } from '../manager/UIManager';
 import { SCREEN_IDS } from '../manager/screenIds';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
-import { createActionButton, createCircleSymbolButton, createOracleCardFrame, createOracleHeader } from '../components/OracleCard';
+import { buildFrameScene } from '../components/figmaCsvScene';
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 
 type MainState = 'dispatcher' | 'meaning';
@@ -24,41 +24,30 @@ export class MainScreen extends BaseScreen {
       fontWeight: '400',
     },
   });
+
+  private readonly desktop1Layer: Container;
+  private readonly desktop2Layer: Container;
   private selectedState: MainState = 'dispatcher';
 
   constructor(private readonly uiManager: UIManager) {
     super();
+
+    this.desktop1Layer = buildFrameScene('Desktop - 1', {
+      nodeIds: ['1:26', '1:58', '1:75', '1:15', '1:14', '1:19'],
+    }).container;
+
+    this.desktop2Layer = buildFrameScene('Desktop - 2', {
+      nodeIds: ['1:30', '1:64', '1:76', '1:37', '1:34', '1:40'],
+    }).container;
   }
 
   build(): void {
-    const leftArrowButton = createCircleSymbolButton({ centerX: 546, centerY: 595, symbol: '◀', symbolSize: 44 });
-    const rightArrowButton = createCircleSymbolButton({ centerX: 894, centerY: 595, symbol: '▶', symbolSize: 44 });
-    const selectButton = createActionButton({
-      x: SELECT_BUTTON_BOUNDS.x,
-      y: SELECT_BUTTON_BOUNDS.y,
-      width: SELECT_BUTTON_BOUNDS.width,
-      height: SELECT_BUTTON_BOUNDS.height,
-      label: 'ВЫБРАТЬ',
-      labelX: 638,
-      labelY: 582,
-    });
+    this.view.addChild(this.desktop1Layer, this.desktop2Layer, this.roleLabel);
 
     this.view.addChild(
-      createOracleCardFrame(),
-      createOracleHeader({
-        emblemBounds: { x: 647, y: 222, width: 145.352, height: 145.352 },
-        titleBounds: { x: 521, y: 400, width: 398, height: 52 },
-      }),
-      this.roleLabel,
-      leftArrowButton,
-      rightArrowButton,
-      selectButton,
-    );
-
-    this.view.addChild(
-      createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState(), { animateTarget: leftArrowButton }),
-      createClickArea(RIGHT_ARROW_BOUNDS, () => this.toggleState(), { animateTarget: rightArrowButton }),
-      createClickArea(SELECT_BUTTON_BOUNDS, () => this.selectCurrentState(), { animateTarget: selectButton }),
+      createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState()),
+      createClickArea(RIGHT_ARROW_BOUNDS, () => this.toggleState()),
+      createClickArea(SELECT_BUTTON_BOUNDS, () => this.selectCurrentState()),
     );
 
     this.syncState();
@@ -80,6 +69,10 @@ export class MainScreen extends BaseScreen {
 
   private syncState(): void {
     const isDispatcher = this.selectedState === 'dispatcher';
+
+    this.desktop1Layer.visible = isDispatcher;
+    this.desktop2Layer.visible = !isDispatcher;
+
     this.roleLabel.text = isDispatcher ? 'я диспетчер' : 'а что это значит?';
     this.roleLabel.position.set(
       isDispatcher ? DISPATCHER_ROLE_BOUNDS.x : MEANING_ROLE_BOUNDS.x,

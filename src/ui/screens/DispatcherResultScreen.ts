@@ -2,7 +2,7 @@ import { Text } from 'pixi.js';
 import type { UIManager } from '../manager/UIManager';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
-import { createCircleSymbolButton, createOracleCardFrame, createOracleHeader } from '../components/OracleCard';
+import { buildFrameScene, createNodeSprite } from '../components/figmaCsvScene';
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 
 const CLOSE_BUTTON_BOUNDS = { x: 704, y: 631, width: 50, height: 50 };
@@ -13,6 +13,10 @@ export class DispatcherResultScreen extends BaseScreen {
   }
 
   build(): void {
+    const frameScene = buildFrameScene('Desktop - 3', {
+      nodeIds: ['1:44', '1:165', '1:87', '1:101'],
+    });
+
     const resultLabel = new Text({
       text: 'вот и думайте',
       style: {
@@ -24,23 +28,13 @@ export class DispatcherResultScreen extends BaseScreen {
     });
     resultLabel.position.set(613, 469);
 
-    const closeButton = createCircleSymbolButton({ centerX: 729, centerY: 656, symbol: '✕', symbolSize: 54 });
+    const closeButtonSprite = createNodeSprite('23:12', 'Desktop - 4')?.sprite;
 
-    this.view.addChild(
-      createOracleCardFrame(),
-      createOracleHeader({
-        emblemBounds: { x: 647, y: 222, width: 145.352, height: 145.352 },
-        titleBounds: { x: 521, y: 400, width: 398, height: 52 },
-        showStars: true,
-        starsBounds: { x: 676.176, y: 372, width: 87, height: 21.516 },
-        starsColor: 0xc8c9c6,
-      }),
-      resultLabel,
-      closeButton,
-    );
+    this.view.addChild(frameScene.container, resultLabel);
+    if (closeButtonSprite) {
+      this.view.addChild(closeButtonSprite);
+    }
 
-    this.view.addChild(
-      createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack(), { animateTarget: closeButton }),
-    );
+    this.view.addChild(createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack()));
   }
 }
