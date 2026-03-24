@@ -1,11 +1,14 @@
-import { Application } from 'pixi.js';
+import { Application, Assets } from 'pixi.js';
 import { UIManager } from '../ui/manager/UIManager';
 import { SCREEN_IDS } from '../ui/manager/screenIds';
-import { MainMenuScreen } from '../ui/screens/MainMenuScreen';
-import { SettingsScreen } from '../ui/screens/SettingsScreen';
-import { ProfileScreen } from '../ui/screens/ProfileScreen';
-import { FinalScreen } from '../ui/screens/FinalScreen';
+import { MainScreen } from '../ui/screens/MainScreen';
+import { DispatcherResultScreen } from '../ui/screens/DispatcherResultScreen';
+import { MeaningResultScreen } from '../ui/screens/MeaningResultScreen';
 import { FIGMA_COLORS, FIGMA_LAYOUT } from '../ui/components/designTokens';
+import desktop1Texture from '../assets/textures/figma/desktop-1.png';
+import desktop2Texture from '../assets/textures/figma/desktop-2.png';
+import desktop3Texture from '../assets/textures/figma/desktop-3.png';
+import desktop4Texture from '../assets/textures/figma/desktop-4.png';
 
 export type AppContext = {
   app: Application;
@@ -22,12 +25,13 @@ export async function createApp(): Promise<AppContext> {
     antialias: true,
   });
 
+  await Assets.load([desktop1Texture, desktop2Texture, desktop3Texture, desktop4Texture]);
+
   const uiManager = new UIManager(app.stage);
 
-  uiManager.register(SCREEN_IDS.mainMenu, () => new MainMenuScreen(uiManager));
-  uiManager.register(SCREEN_IDS.settings, () => new SettingsScreen(uiManager));
-  uiManager.register(SCREEN_IDS.profile, () => new ProfileScreen(uiManager));
-  uiManager.register(SCREEN_IDS.final, () => new FinalScreen(uiManager));
+  uiManager.register(SCREEN_IDS.main, () => new MainScreen(uiManager));
+  uiManager.register(SCREEN_IDS.dispatcherResult, () => new DispatcherResultScreen(uiManager));
+  uiManager.register(SCREEN_IDS.meaningResult, () => new MeaningResultScreen(uiManager));
 
   return { app, uiManager };
 }
