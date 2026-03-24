@@ -90,6 +90,12 @@ src/
 4. Add comments only when intent is not obvious.
 5. Do not leave dead code, TODO clutter, or unused exports.
 
+## Encoding and line endings
+
+1. All script and source files must be saved in `UTF-8` encoding.
+2. Use `CRLF` line endings for all text files in this project.
+3. Do not mix encodings or line-ending styles within a file.
+
 ## Change policy for agents
 
 1. Do not introduce unnecessary abstractions.

@@ -5,10 +5,11 @@ import { createClickArea } from '../components/ClickArea';
 import { createCircleSymbolButton, createOracleCardFrame, createOracleHeader } from '../components/OracleCard';
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 import { bindPressable } from '../components/pressable';
+import { MEANING_RESULT_TEXT } from './meaningResultText';
 
 const CLOSE_BUTTON_BOUNDS = { x: 704, y: 631, width: 50, height: 50 };
 const TEXT_PANEL_BOUNDS = { x: 569, y: 462, width: 321, height: 153, radius: 10 };
-const TEXT_VIEWPORT = { x: 589, y: 474, width: 258, height: 129 };
+const TEXT_VIEWPORT = { x: 589, y: 474, width: 263, height: 129 };
 const SCROLLBAR_BOUNDS = { x: 862, y: 469, width: 19, height: 138 };
 const SCROLL_STEP = 20;
 const SCROLL_THUMB_MIN_HEIGHT = 16;
@@ -27,24 +28,6 @@ const SCROLL_THUMB_BORDER_COLOR = 0x787b7b;
 const SCROLL_WELL_RADIUS = SCROLLBAR_BOUNDS.width / 2;
 const ARROW_HALF_WIDTH = 3.75;
 const ARROW_HALF_HEIGHT = 3.686;
-
-const MEANING_TEXT = [
-  'Почему вообще люди ждут конца света?',
-  'И почему, если таковой предстоит, он обязательно',
-  'должен быть для большинства человеческого рода',
-  'ужасным?..',
-  '',
-  'Ответ на первый вопрос состоит, по-видимому,',
-  'в том, что существование мира, как подсказывает',
-  'людям разум, имеет ценность лишь постольку,',
-  'поскольку разумные существа соответствуют',
-  'своему собственному предназначению.',
-  '',
-  'Поэтому катастрофа воспринимается не только',
-  'как разрушение материи, но и как испытание',
-  'для смысла, который человек вкладывает',
-  'в свою жизнь, поступки и выбор.',
-].join('\n');
 
 type ThumbShape = {
   x: number;
@@ -102,15 +85,20 @@ export class MeaningResultScreen extends BaseScreen {
       .stroke({ color: 0x6b6b6b, width: 4 });
 
     const meaningText = new Text({
-      text: MEANING_TEXT,
+      text: MEANING_RESULT_TEXT,
       style: {
         fontFamily: FIGMA_FONTS.compact,
-        fontSize: 10,
+        fontSize: 11,
+        fontWeight: '400',
+        fontStyle: 'normal',
         fill: FIGMA_COLORS.textDark,
         lineHeight: 17.055,
+        letterSpacing: 0,
       },
     });
     meaningText.position.set(TEXT_VIEWPORT.x, TEXT_VIEWPORT.y);
+    meaningText.resolution = Math.max(window.devicePixelRatio || 1, 2);
+    meaningText.roundPixels = true;
 
     const textMask = new Graphics()
       .rect(TEXT_VIEWPORT.x, TEXT_VIEWPORT.y, TEXT_VIEWPORT.width, TEXT_VIEWPORT.height)
@@ -176,14 +164,14 @@ export class MeaningResultScreen extends BaseScreen {
       const scrollRatio = maxScroll <= 0 ? 0 : scrollOffset / maxScroll;
       thumbShape.y = SCROLL_THUMB_TOP_LIMIT + maxThumbOffset * scrollRatio;
 
-      meaningText.y = TEXT_VIEWPORT.y - scrollOffset;
+      meaningText.y = Math.round(TEXT_VIEWPORT.y - scrollOffset);
       thumb.alpha = maxScroll > 0 ? 1 : 0.5;
       redrawThumb();
     };
 
     const setScroll = (nextOffset: number): void => {
       const maxScroll = getMaxScroll();
-      scrollOffset = Math.min(Math.max(nextOffset, 0), maxScroll);
+      scrollOffset = Math.round(Math.min(Math.max(nextOffset, 0), maxScroll));
       syncScrollVisuals();
     };
 
@@ -296,4 +284,3 @@ export class MeaningResultScreen extends BaseScreen {
     return button;
   }
 }
-

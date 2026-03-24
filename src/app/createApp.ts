@@ -18,6 +18,9 @@ export async function createApp(container: HTMLElement = document.body): Promise
     resizeTo: container,
     background: `#${FIGMA_COLORS.canvas.toString(16).padStart(6, '0')}`,
     antialias: true,
+    autoDensity: true,
+    resolution: Math.max(window.devicePixelRatio || 1, 2),
+    roundPixels: true,
   });
 
   const uiRoot = new Container();
