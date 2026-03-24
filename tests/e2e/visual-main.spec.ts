@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 
 const RIGHT_ARROW_CENTER = { x: 894, y: 595 };
+const SELECT_BUTTON_CENTER = { x: 720, y: 595 };
 
 async function openMainScreen(page: Page): Promise<void> {
   await page.goto('/');
@@ -31,6 +32,19 @@ test('screen 2 matches Desktop - 2', async ({ page }) => {
   await page.waitForTimeout(100);
 
   await expect(page.locator('canvas')).toHaveScreenshot('Desktop - 2.png', {
+    animations: 'disabled',
+    caret: 'hide',
+    maxDiffPixelRatio: 0.001,
+  });
+});
+
+test('screen 3 matches Desktop - 3', async ({ page }) => {
+  await openMainScreen(page);
+
+  await page.mouse.click(SELECT_BUTTON_CENTER.x, SELECT_BUTTON_CENTER.y);
+  await page.waitForTimeout(100);
+
+  await expect(page.locator('canvas')).toHaveScreenshot('Desktop - 3.png', {
     animations: 'disabled',
     caret: 'hide',
     maxDiffPixelRatio: 0.001,
