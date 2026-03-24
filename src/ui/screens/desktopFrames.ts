@@ -1,6 +1,11 @@
-﻿import { buildFrameScene, createNodeSprite } from '../components/figmaCsvScene';
+import { buildFrameScene, createNodeSprite } from '../components/figmaCsvScene';
 
-type ElementMap = Record<string, string>;
+type FrameElement = {
+  nodeId: string;
+  assetNodeId?: string;
+};
+
+type ElementMap = Record<string, string | FrameElement>;
 
 type ElementKey<T extends ElementMap> = keyof T;
 
@@ -11,12 +16,25 @@ class DesktopFrame<T extends ElementMap> {
   ) {}
 
   buildScene(keys?: readonly ElementKey<T>[]) {
-    const nodeIds = keys ? keys.map((key) => this.elements[key]) : Object.values(this.elements);
-    return buildFrameScene(this.name, { nodeIds });
+    const selectedElements: Array<string | FrameElement> = keys
+      ? keys.map((key) => this.elements[key])
+      : Object.values(this.elements);
+    return buildFrameScene(this.name, {
+      nodes: selectedElements.map((entry) => this.toFrameElement(entry)),
+    });
   }
 
   createElementSprite(key: ElementKey<T>) {
-    return createNodeSprite(this.elements[key], this.name);
+    const element = this.toFrameElement(this.elements[key]);
+    return createNodeSprite(element.nodeId, this.name, { assetNodeId: element.assetNodeId });
+  }
+
+  private toFrameElement(entry: string | FrameElement): FrameElement {
+    if (typeof entry === 'string') {
+      return { nodeId: entry };
+    }
+
+    return entry;
   }
 }
 
@@ -43,6 +61,10 @@ const desktop3Elements = {
   cardFrame: '1:165',
   resultBadgeGroup: '1:87',
   decorationGroup: '1:101',
+  closeButtonGroup: {
+    nodeId: '25:2',
+    assetNodeId: '23:12',
+  },
 } as const;
 
 const desktop4Elements = {

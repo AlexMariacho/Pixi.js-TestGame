@@ -2,7 +2,7 @@ import { Text } from 'pixi.js';
 import type { UIManager } from '../manager/UIManager';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
-import { DESKTOP_3, DESKTOP_4 } from './desktopFrames';
+import { DESKTOP_3 } from './desktopFrames';
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 
 const CLOSE_BUTTON_BOUNDS = { x: 704, y: 631, width: 50, height: 50 };
@@ -26,7 +26,7 @@ export class DispatcherResultScreen extends BaseScreen {
     });
     resultLabel.position.set(613, 469);
 
-    const closeButtonSprite = DESKTOP_4.createElementSprite('closeButtonGroup')?.sprite;
+    const closeButtonSprite = DESKTOP_3.createElementSprite('closeButtonGroup')?.sprite;
 
     this.view.addChild(frameScene.container, resultLabel);
     if (closeButtonSprite) {

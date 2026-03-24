@@ -30,7 +30,13 @@ type CoordinatePayload = {
 };
 
 type BuildFrameSceneOptions = {
+  nodes?: NodeSceneDescriptor[];
   nodeIds?: string[];
+};
+
+type NodeSceneDescriptor = {
+  nodeId: string;
+  assetNodeId?: string;
 };
 
 type NodeSprite = {
@@ -120,29 +126,36 @@ export function buildFrameScene(frameName: string, options?: BuildFrameSceneOpti
     return { container: new Container(), nodes: new Map<string, NodeSprite>() };
   }
 
-  const nodeIds =
-    options?.nodeIds ??
+  const sceneNodes: NodeSceneDescriptor[] =
+    options?.nodes ??
+    options?.nodeIds?.map((nodeId) => ({ nodeId })) ??
     (frame.children ?? [])
       .filter((child) => child.type !== 'TEXT')
-      .map((child) => child.nodeId);
+      .map((child) => ({ nodeId: child.nodeId }));
 
   const container = new Container();
   const nodes = new Map<string, NodeSprite>();
 
-  for (const nodeId of nodeIds) {
-    const nodeSprite = createNodeSprite(nodeId, normalizedFrameName);
+  for (const nodeEntry of sceneNodes) {
+    const nodeSprite = createNodeSprite(nodeEntry.nodeId, normalizedFrameName, {
+      assetNodeId: nodeEntry.assetNodeId,
+    });
     if (!nodeSprite) {
       continue;
     }
 
-    nodes.set(nodeId, nodeSprite);
+    nodes.set(nodeEntry.nodeId, nodeSprite);
     container.addChild(nodeSprite.sprite);
   }
 
   return { container, nodes };
 }
 
-export function createNodeSprite(nodeId: string, frameName: string): NodeSprite | null {
+export function createNodeSprite(
+  nodeId: string,
+  frameName: string,
+  options?: { assetNodeId?: string },
+): NodeSprite | null {
   const normalizedFrameName = normalizeFrameName(frameName);
   const frame = frameByName.get(normalizedFrameName);
   if (!frame) {
@@ -155,7 +168,7 @@ export function createNodeSprite(nodeId: string, frameName: string): NodeSprite 
     return null;
   }
 
-  const asset = resolveAssetRow(nodeId);
+  const asset = resolveAssetRow(options?.assetNodeId ?? nodeId);
   if (!asset) {
     return null;
   }

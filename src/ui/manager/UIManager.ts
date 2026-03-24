@@ -16,6 +16,10 @@ export class UIManager {
   }
 
   register(id: ScreenId, factory: () => BaseScreen): void {
+    if (this.factories.has(id)) {
+      throw new Error(`Screen already registered: ${id}`);
+    }
+
     this.factories.set(id, factory);
   }
 
