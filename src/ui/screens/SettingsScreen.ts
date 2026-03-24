@@ -1,8 +1,9 @@
 import { BaseScreen } from './BaseScreen';
 import type { UIManager } from '../manager/UIManager';
-import { createButton } from '../components/Button';
-import { createLabel } from '../components/Label';
-import { createPanel } from '../components/Panel';
+import { SCREEN_IDS } from '../manager/screenIds';
+import { createDialogShell } from '../components/DialogShell';
+import { createNavigationControls } from '../components/NavigationControls';
+import { FIGMA_LAYOUT } from '../components/designTokens';
 
 export class SettingsScreen extends BaseScreen {
   constructor(private readonly uiManager: UIManager) {
@@ -10,19 +11,16 @@ export class SettingsScreen extends BaseScreen {
   }
 
   build(): void {
-    const panel = createPanel(520, 420, 0x0f766e);
-    panel.position.set(380, 140);
+    const shell = createDialogShell({ subtitle: 'а что это значит?' });
+    shell.position.set((FIGMA_LAYOUT.appWidth - FIGMA_LAYOUT.cardWidth) / 2, 205);
 
-    const title = createLabel('Settings', 42);
-    title.position.set(170, 40);
-
-    const backButton = createButton({
-      text: 'Back',
-      onClick: () => this.uiManager.goBack(),
+    const controls = createNavigationControls({
+      onPrev: () => this.uiManager.goBack(),
+      onNext: () => this.uiManager.show(SCREEN_IDS.profile),
+      onSelect: () => this.uiManager.show(SCREEN_IDS.profile),
     });
-    backButton.position.set(150, 300);
 
-    panel.addChild(title, backButton);
-    this.view.addChild(panel);
+    shell.addChild(controls);
+    this.view.addChild(shell);
   }
 }

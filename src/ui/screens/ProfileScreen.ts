@@ -1,8 +1,10 @@
 import { BaseScreen } from './BaseScreen';
 import type { UIManager } from '../manager/UIManager';
-import { createButton } from '../components/Button';
-import { createLabel } from '../components/Label';
-import { createPanel } from '../components/Panel';
+import { SCREEN_IDS } from '../manager/screenIds';
+import { createAcceptControl } from '../components/AcceptControl';
+import { createDialogShell } from '../components/DialogShell';
+import { createRatingStars } from '../components/RatingStars';
+import { FIGMA_LAYOUT } from '../components/designTokens';
 
 export class ProfileScreen extends BaseScreen {
   constructor(private readonly uiManager: UIManager) {
@@ -10,19 +12,13 @@ export class ProfileScreen extends BaseScreen {
   }
 
   build(): void {
-    const panel = createPanel(520, 420, 0x7c2d12);
-    panel.position.set(380, 140);
+    const shell = createDialogShell({ subtitle: 'вот и думайте' });
+    shell.position.set((FIGMA_LAYOUT.appWidth - FIGMA_LAYOUT.cardWidth) / 2, 205);
 
-    const title = createLabel('Profile', 42);
-    title.position.set(190, 40);
+    const stars = createRatingStars();
+    const accept = createAcceptControl(() => this.uiManager.show(SCREEN_IDS.final));
 
-    const backButton = createButton({
-      text: 'Back',
-      onClick: () => this.uiManager.goBack(),
-    });
-    backButton.position.set(150, 300);
-
-    panel.addChild(title, backButton);
-    this.view.addChild(panel);
+    shell.addChild(stars, accept);
+    this.view.addChild(shell);
   }
 }
