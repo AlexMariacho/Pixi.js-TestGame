@@ -8,6 +8,8 @@ import { MEANING_RESULT_TEXT } from './meaningResultText';
 
 const CLOSE_BUTTON_BOUNDS = { x: 704, y: 631, width: 50, height: 50 };
 const TEXT_VIEWPORT = { x: 589, y: 474, width: 258, height: 129 };
+const TITLE_BOUNDS = { x: 521, y: 400 };
+const TITLE_TEXT = 'ДОБРЫЙ ВЕЧЕР';
 const SCROLL_STEP = 20;
 const SCROLL_THUMB_MIN_HEIGHT = 16;
 const SCROLL_LANE_X = 864;
@@ -33,11 +35,21 @@ export class MeaningResultScreen extends BaseScreen {
 
   build(): void {
     const frameScene = DESKTOP_4.buildScene();
+    const titleLabel = new Text({
+      text: TITLE_TEXT,
+      style: {
+        fontFamily: FIGMA_FONTS.heading,
+        fontSize: 48,
+        fill: FIGMA_COLORS.textDark,
+        fontWeight: '400',
+      },
+    });
+    titleLabel.position.set(TITLE_BOUNDS.x, TITLE_BOUNDS.y);
 
     const closeButtonSprite = frameScene.nodes.get(DESKTOP_4.elements.closeButtonGroup)?.sprite;
     const meaningScrollBox = this.createMeaningScrollBox();
 
-    this.view.addChild(frameScene.container, meaningScrollBox);
+    this.view.addChild(frameScene.container, titleLabel, meaningScrollBox);
 
     this.view.addChild(
       createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack(), closeButtonSprite ? { animateTarget: closeButtonSprite } : undefined),
