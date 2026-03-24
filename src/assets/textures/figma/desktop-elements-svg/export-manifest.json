@@ -1,15 +1,20 @@
-﻿{
-    "exportedAt":  "2026-03-24T17:26:17",
-    "fileKey":  "kWIy02Wro09TYXsrd21H4y",
-    "pageId":  "0:1",
-    "desktopFrames":  [
-                          "Desktop - 1",
-                          "Desktop - 2",
-                          "Desktop - 3",
-                          "Desktop - 4"
-                      ],
-    "totalEligibleNodes":  80,
-    "downloaded":  80,
-    "failedCount":  0,
-    "outputRoot":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg"
+{
+    "exportedAt": "2026-03-24T17:26:17",
+    "fileKey": "kWIy02Wro09TYXsrd21H4y",
+    "pageId": "0:1",
+    "desktopFrames": [
+        "Desktop - 1",
+        "Desktop - 2",
+        "Desktop - 3",
+        "Desktop - 4"
+    ],
+    "totalEligibleNodes": 80,
+    "downloaded": 80,
+    "failedCount": 0,
+    "outputRoot": "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg",
+    "deduplicatedAt": "2026-03-24T17:34:16",
+    "originalSvgCount": 80,
+    "removedDuplicates": 19,
+    "uniqueSvgCount": 61,
+    "remainingDuplicateFiles": 0
 }
