@@ -1,6 +1,7 @@
 import { Container } from 'pixi.js';
 import type { ScreenId } from './screenIds';
 import type { BaseScreen } from '../screens/BaseScreen';
+import { FIGMA_LAYOUT } from '../components/designTokens';
 
 export class UIManager {
   private readonly root: Container;
@@ -65,7 +66,15 @@ export class UIManager {
 
     const screen = factory();
     screen.build();
+    this.centerScreenVertically(screen);
     this.instances.set(id, screen);
     return screen;
+  }
+
+  private centerScreenVertically(screen: BaseScreen): void {
+    const bounds = screen.view.getLocalBounds();
+    const screenCenterY = bounds.y + bounds.height / 2;
+    const layoutCenterY = FIGMA_LAYOUT.appHeight / 2;
+    screen.view.y += layoutCenterY - screenCenterY;
   }
 }

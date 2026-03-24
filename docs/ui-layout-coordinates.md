@@ -6,8 +6,16 @@
 - Extracted implementation decisions: `src/assets/figma/ui-decisions.md`
 
 ## Base canvas
-- App viewport: `1440x1024`
+- Design canvas: `1440x1024`
 - Set in `FIGMA_LAYOUT` (`src/ui/components/designTokens.ts`)
+
+## Responsive strategy
+- Screens keep Figma coordinates in design-space (`1440x1024`).
+- Runtime keeps base scale `1` by default (no upscaling and no immediate downscaling).
+- UI starts shrinking only when viewport is smaller than `base / 1.3` on either axis.
+- Active scale formula: `min(viewportWidth / (1440 / 1.3), viewportHeight / (1024 / 1.3), 1)`.
+- Scaled UI is centered in viewport (letterboxing when aspect ratio differs).
+- This preserves proportions of all elements and hit areas.
 
 ## Main interactive bounds (Desktop - 1)
 - Left arrow hit area: `{ x: 521, y: 570, width: 50, height: 50 }`
@@ -22,3 +30,4 @@
 
 ## Rule for future edits
 - If Figma coordinates change, update `src/assets/figma/*.json` first, then sync screen constants.
+- Keep screen coordinates in design-space; avoid per-screen manual resize math.

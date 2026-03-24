@@ -9,7 +9,7 @@ export async function bootstrap(container: HTMLElement = document.body): Promise
     console.warn('Failed to load figma fonts. Continuing with fallback fonts.', error);
   }
 
-  const { app, uiManager } = await createApp();
+  const { app, uiManager } = await createApp(container);
 
   container.appendChild(app.canvas);
   uiManager.show(SCREEN_IDS.main);
