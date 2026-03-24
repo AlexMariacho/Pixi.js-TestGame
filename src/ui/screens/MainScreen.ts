@@ -1,20 +1,29 @@
-import { Sprite } from 'pixi.js';
+import { Text } from 'pixi.js';
 import type { UIManager } from '../manager/UIManager';
 import { SCREEN_IDS } from '../manager/screenIds';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
-import desktop1Texture from '../../assets/textures/figma/desktop-1.png';
-import desktop2Texture from '../../assets/textures/figma/desktop-2.png';
+import { createActionButton, createCircleSymbolButton, createOracleCardFrame, createOracleHeader } from '../components/OracleCard';
+import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 
 type MainState = 'dispatcher' | 'meaning';
 
 const LEFT_ARROW_BOUNDS = { x: 521, y: 570, width: 50, height: 50 };
 const RIGHT_ARROW_BOUNDS = { x: 869, y: 570, width: 50, height: 50 };
 const SELECT_BUTTON_BOUNDS = { x: 595, y: 560, width: 250, height: 70 };
+const DISPATCHER_ROLE_BOUNDS = { x: 627, y: 469 };
+const MEANING_ROLE_BOUNDS = { x: 596, y: 469 };
 
 export class MainScreen extends BaseScreen {
-  private readonly dispatcherSprite = Sprite.from(desktop1Texture);
-  private readonly meaningSprite = Sprite.from(desktop2Texture);
+  private readonly roleLabel = new Text({
+    text: 'я диспетчер',
+    style: {
+      fontFamily: FIGMA_FONTS.body,
+      fontSize: 48,
+      fill: FIGMA_COLORS.textDark,
+      fontWeight: '400',
+    },
+  });
   private selectedState: MainState = 'dispatcher';
 
   constructor(private readonly uiManager: UIManager) {
@@ -22,7 +31,25 @@ export class MainScreen extends BaseScreen {
   }
 
   build(): void {
-    this.view.addChild(this.dispatcherSprite, this.meaningSprite);
+    this.view.addChild(
+      createOracleCardFrame(),
+      createOracleHeader({
+        emblemBounds: { x: 647, y: 222, width: 145.352, height: 145.352 },
+        titleBounds: { x: 521, y: 400, width: 398, height: 52 },
+      }),
+      this.roleLabel,
+      createCircleSymbolButton({ centerX: 546, centerY: 595, symbol: '◀', symbolSize: 44 }),
+      createCircleSymbolButton({ centerX: 894, centerY: 595, symbol: '▶', symbolSize: 44 }),
+      createActionButton({
+        x: SELECT_BUTTON_BOUNDS.x,
+        y: SELECT_BUTTON_BOUNDS.y,
+        width: SELECT_BUTTON_BOUNDS.width,
+        height: SELECT_BUTTON_BOUNDS.height,
+        label: 'ВЫБРАТЬ',
+        labelX: 638,
+        labelY: 582,
+      }),
+    );
 
     this.view.addChild(
       createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState()),
@@ -48,8 +75,11 @@ export class MainScreen extends BaseScreen {
   }
 
   private syncState(): void {
-    const isDispatcherState = this.selectedState === 'dispatcher';
-    this.dispatcherSprite.visible = isDispatcherState;
-    this.meaningSprite.visible = !isDispatcherState;
+    const isDispatcher = this.selectedState === 'dispatcher';
+    this.roleLabel.text = isDispatcher ? 'я диспетчер' : 'а что это значит?';
+    this.roleLabel.position.set(
+      isDispatcher ? DISPATCHER_ROLE_BOUNDS.x : MEANING_ROLE_BOUNDS.x,
+      isDispatcher ? DISPATCHER_ROLE_BOUNDS.y : MEANING_ROLE_BOUNDS.y,
+    );
   }
 }
