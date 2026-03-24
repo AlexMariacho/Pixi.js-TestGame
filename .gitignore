@@ -28,7 +28,8 @@ lerna-debug.log*
 !.env.example
 
 # IDE / OS
-.vscode/
+.vscode/*
+!.vscode/launch.json
 .idea/
 .DS_Store
 Thumbs.db

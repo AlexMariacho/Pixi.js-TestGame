@@ -1,0 +1,31 @@
+{
+  "name": "pixi.js-testgame",
+  "version": "1.0.0",
+  "description": "Pixi.js based UI application with screen navigation.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexMariacho/Pixi.js-TestGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexMariacho/Pixi.js-TestGame/issues"
+  },
+  "homepage": "https://github.com/AlexMariacho/Pixi.js-TestGame#readme",
+  "dependencies": {
+    "pixi.js": "^8.17.1"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "vite": "^8.0.2"
+  }
+}
