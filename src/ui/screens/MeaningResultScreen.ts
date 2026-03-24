@@ -65,10 +65,10 @@ export class MeaningResultScreen extends BaseScreen {
     this.view.addChild(
       createOracleCardFrame(),
       createOracleHeader({
-        emblemBounds: { x: 647, y: 222, width: 145.352, height: 145.352 },
+        emblemBounds: { x: 657, y: 219, width: 145.352, height: 145.352 },
         titleBounds: { x: 521, y: 400, width: 398, height: 52 },
         showStars: true,
-        starsBounds: { x: 676.176, y: 372, width: 87, height: 21.516 },
+        starsBounds: { x: 686, y: 372, width: 87, height: 21.516 },
         starsColor: FIGMA_COLORS.accent,
       }),
       meaningScrollBox,

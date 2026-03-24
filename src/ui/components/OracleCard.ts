@@ -1,18 +1,38 @@
 import { Container, Graphics, Text } from 'pixi.js';
 import { FIGMA_COLORS, FIGMA_FONTS, FIGMA_LAYOUT } from './designTokens';
 
-const CARD_Y = 205;
-const CARD_RADIUS = 54;
-const CARD_BORDER = 14;
-const DOME_Y_OFFSET = 56;
-const OUTER_DOME_RADIUS = 140;
-const INNER_DOME_RADIUS = OUTER_DOME_RADIUS - CARD_BORDER;
+const CARD_STROKE_WIDTH = 20;
+const BASE_RECT_RADIUS = 50;
+const CARD_BASE_RECT = {
+  x: 470,
+  y: 312,
+  width: 500,
+  height: 400,
+} as const;
+const CARD_DOME = {
+  x: 541,
+  y: 205,
+  diameter: 357,
+} as const;
+const CARD_DOME_RADIUS = CARD_DOME.diameter / 2;
+const CARD_DOME_CENTER = {
+  x: CARD_DOME.x + CARD_DOME_RADIUS,
+  y: CARD_DOME.y + CARD_DOME_RADIUS,
+} as const;
+const CARD_OUTER_RECT = {
+  x: CARD_BASE_RECT.x - CARD_STROKE_WIDTH,
+  y: CARD_BASE_RECT.y - CARD_STROKE_WIDTH,
+  width: CARD_BASE_RECT.width + CARD_STROKE_WIDTH * 2,
+  height: CARD_BASE_RECT.height + CARD_STROKE_WIDTH * 2,
+  radius: BASE_RECT_RADIUS + CARD_STROKE_WIDTH,
+} as const;
+const CARD_OUTER_DOME_RADIUS = CARD_DOME_RADIUS + CARD_STROKE_WIDTH;
 
 export const ORACLE_CARD_LAYOUT = {
-  x: (FIGMA_LAYOUT.appWidth - FIGMA_LAYOUT.cardWidth) / 2,
-  y: CARD_Y,
-  width: FIGMA_LAYOUT.cardWidth,
-  height: FIGMA_LAYOUT.cardHeight,
+  x: CARD_BASE_RECT.x,
+  y: CARD_DOME.y,
+  width: CARD_BASE_RECT.width,
+  height: CARD_BASE_RECT.height + (CARD_BASE_RECT.y - CARD_DOME.y),
   centerX: FIGMA_LAYOUT.appWidth / 2,
 } as const;
 
@@ -32,25 +52,30 @@ type HeaderOptions = {
 };
 
 export function createOracleCardFrame(): Container {
-  const { x, y, width, height, centerX } = ORACLE_CARD_LAYOUT;
   const card = new Container();
 
   const outer = new Graphics()
-    .roundRect(x, y, width, height, CARD_RADIUS)
+    .roundRect(
+      CARD_OUTER_RECT.x,
+      CARD_OUTER_RECT.y,
+      CARD_OUTER_RECT.width,
+      CARD_OUTER_RECT.height,
+      CARD_OUTER_RECT.radius,
+    )
     .fill(FIGMA_COLORS.accent)
-    .circle(centerX, y + DOME_Y_OFFSET, OUTER_DOME_RADIUS)
+    .circle(CARD_DOME_CENTER.x, CARD_DOME_CENTER.y, CARD_OUTER_DOME_RADIUS)
     .fill(FIGMA_COLORS.accent);
 
   const inner = new Graphics()
     .roundRect(
-      x + CARD_BORDER,
-      y + CARD_BORDER,
-      width - CARD_BORDER * 2,
-      height - CARD_BORDER * 2,
-      CARD_RADIUS - 10,
+      CARD_BASE_RECT.x,
+      CARD_BASE_RECT.y,
+      CARD_BASE_RECT.width,
+      CARD_BASE_RECT.height,
+      BASE_RECT_RADIUS,
     )
     .fill(FIGMA_COLORS.card)
-    .circle(centerX, y + DOME_Y_OFFSET + 2, INNER_DOME_RADIUS)
+    .circle(CARD_DOME_CENTER.x, CARD_DOME_CENTER.y, CARD_DOME_RADIUS)
     .fill(FIGMA_COLORS.card);
 
   card.addChild(outer, inner);
