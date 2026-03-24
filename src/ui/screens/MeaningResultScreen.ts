@@ -1,4 +1,4 @@
-import { Graphics, Text } from 'pixi.js';
+import { Container, FederatedPointerEvent, FederatedWheelEvent, Graphics, Text } from 'pixi.js';
 import type { UIManager } from '../manager/UIManager';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
@@ -6,6 +6,51 @@ import { createCircleSymbolButton, createOracleCardFrame, createOracleHeader } f
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 
 const CLOSE_BUTTON_BOUNDS = { x: 704, y: 631, width: 50, height: 50 };
+const TEXT_PANEL_BOUNDS = { x: 569, y: 462, width: 321, height: 153, radius: 10 };
+const TEXT_VIEWPORT = { x: 589, y: 474, width: 258, height: 129 };
+const SCROLLBAR_BOUNDS = { x: 862, y: 469, width: 19, height: 138 };
+const SCROLL_STEP = 20;
+const SCROLL_THUMB_MIN_HEIGHT = 16;
+const SCROLL_BUTTON_RADIUS = 7.372;
+const UP_BUTTON_CENTER_X = 871.5;
+const UP_BUTTON_CENTER_Y = 478.5;
+const DOWN_BUTTON_CENTER_X = 871.5;
+const DOWN_BUTTON_CENTER_Y = 597.5;
+const SCROLL_LANE_X = 864;
+const SCROLL_LANE_WIDTH = 15;
+const SCROLL_THUMB_TOP_LIMIT = 493;
+const SCROLL_THUMB_BOTTOM_LIMIT = 582.628;
+const SCROLL_WELL_COLOR = 0xd0d1cf;
+const SCROLL_THUMB_COLOR = 0x8c8f8f;
+const SCROLL_THUMB_BORDER_COLOR = 0x787b7b;
+const SCROLL_WELL_RADIUS = SCROLLBAR_BOUNDS.width / 2;
+const ARROW_HALF_WIDTH = 3.75;
+const ARROW_HALF_HEIGHT = 3.686;
+
+const MEANING_TEXT = [
+  'Почему вообще люди ждут конца света?',
+  'И почему, если таковой предстоит, он обязательно',
+  'должен быть для большинства человеческого рода',
+  'ужасным?..',
+  '',
+  'Ответ на первый вопрос состоит, по-видимому,',
+  'в том, что существование мира, как подсказывает',
+  'людям разум, имеет ценность лишь постольку,',
+  'поскольку разумные существа соответствуют',
+  'своему собственному предназначению.',
+  '',
+  'Поэтому катастрофа воспринимается не только',
+  'как разрушение материи, но и как испытание',
+  'для смысла, который человек вкладывает',
+  'в свою жизнь, поступки и выбор.',
+].join('\n');
+
+type ThumbShape = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+};
 
 export class MeaningResultScreen extends BaseScreen {
   constructor(private readonly uiManager: UIManager) {
@@ -13,45 +58,7 @@ export class MeaningResultScreen extends BaseScreen {
   }
 
   build(): void {
-    const textPanel = new Graphics()
-      .roundRect(569, 462, 321, 153, 10)
-      .fill(FIGMA_COLORS.panel)
-      .roundRect(569, 462, 321, 153, 10)
-      .stroke({ color: 0x6b6b6b, width: 4 });
-
-    const scrollBar = new Graphics()
-      .roundRect(862, 469, 19, 138, 4)
-      .fill(0xd0d1cf)
-      .circle(871.5, 500.372, 7.372)
-      .fill(0xa62b30)
-      .roundRect(864, 493, 15, 45, 2)
-      .fill(0xa62b30)
-      .circle(871.5, 597.372, 7.372)
-      .fill(0xa62b30)
-      .poly([871.5, 474.652, 875.25, 482.024, 867.75, 482.024])
-      .fill(FIGMA_COLORS.textLight)
-      .poly([871.5, 600.058, 875.25, 592.686, 867.75, 592.686])
-      .fill(FIGMA_COLORS.textLight);
-
-    const meaningText = new Text({
-      text: [
-        'Почему вообще люди ждут конца света?',
-        'И почему, если таковой предстоит, он обязательно',
-        'должен быть для большинства человеческого рода',
-        'ужасным?..',
-        'Ответ на первый вопрос состоит, по-видимому,',
-        'в том, что существование мира, как подсказывает',
-        'людям разум, имеет ценность лишь постольку,',
-        'поскольку разумные существа соответствуют',
-      ].join('\n'),
-      style: {
-        fontFamily: FIGMA_FONTS.compact,
-        fontSize: 10,
-        fill: FIGMA_COLORS.textDark,
-        lineHeight: 17.055,
-      },
-    });
-    meaningText.position.set(589, 474);
+    const meaningScrollBox = this.createMeaningScrollBox();
 
     this.view.addChild(
       createOracleCardFrame(),
@@ -62,12 +69,227 @@ export class MeaningResultScreen extends BaseScreen {
         starsBounds: { x: 676.176, y: 372, width: 87, height: 21.516 },
         starsColor: FIGMA_COLORS.accent,
       }),
-      textPanel,
-      scrollBar,
-      meaningText,
+      meaningScrollBox,
       createCircleSymbolButton({ centerX: 729, centerY: 656, symbol: '✕', symbolSize: 54 }),
     );
 
     this.view.addChild(createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack()));
+  }
+
+  private createMeaningScrollBox(): Container {
+    const scrollBox = new Container();
+
+    const panel = new Graphics()
+      .roundRect(
+        TEXT_PANEL_BOUNDS.x,
+        TEXT_PANEL_BOUNDS.y,
+        TEXT_PANEL_BOUNDS.width,
+        TEXT_PANEL_BOUNDS.height,
+        TEXT_PANEL_BOUNDS.radius,
+      )
+      .fill(FIGMA_COLORS.panel)
+      .roundRect(
+        TEXT_PANEL_BOUNDS.x,
+        TEXT_PANEL_BOUNDS.y,
+        TEXT_PANEL_BOUNDS.width,
+        TEXT_PANEL_BOUNDS.height,
+        TEXT_PANEL_BOUNDS.radius,
+      )
+      .stroke({ color: 0x6b6b6b, width: 4 });
+
+    const meaningText = new Text({
+      text: MEANING_TEXT,
+      style: {
+        fontFamily: FIGMA_FONTS.compact,
+        fontSize: 10,
+        fill: FIGMA_COLORS.textDark,
+        lineHeight: 17.055,
+      },
+    });
+    meaningText.position.set(TEXT_VIEWPORT.x, TEXT_VIEWPORT.y);
+
+    const textMask = new Graphics()
+      .rect(TEXT_VIEWPORT.x, TEXT_VIEWPORT.y, TEXT_VIEWPORT.width, TEXT_VIEWPORT.height)
+      .fill(0xffffff);
+    meaningText.mask = textMask;
+
+    const viewportHitArea = new Graphics()
+      .rect(TEXT_VIEWPORT.x, TEXT_VIEWPORT.y, TEXT_VIEWPORT.width, TEXT_VIEWPORT.height)
+      .fill({ color: 0xffffff, alpha: 0.001 });
+    viewportHitArea.eventMode = 'static';
+
+    const scrollBarBackground = new Graphics()
+      .roundRect(
+        SCROLLBAR_BOUNDS.x,
+        SCROLLBAR_BOUNDS.y,
+        SCROLLBAR_BOUNDS.width,
+        SCROLLBAR_BOUNDS.height,
+        SCROLL_WELL_RADIUS,
+      )
+      .fill(SCROLL_WELL_COLOR);
+
+    const laneHitArea = new Graphics()
+      .rect(SCROLL_LANE_X, SCROLL_THUMB_TOP_LIMIT, SCROLL_LANE_WIDTH, SCROLL_THUMB_BOTTOM_LIMIT - SCROLL_THUMB_TOP_LIMIT)
+      .fill({ color: 0xffffff, alpha: 0.001 });
+    laneHitArea.eventMode = 'static';
+    laneHitArea.cursor = 'pointer';
+
+    const thumb = new Graphics();
+    thumb.eventMode = 'static';
+    thumb.cursor = 'pointer';
+
+    const thumbShape: ThumbShape = {
+      x: SCROLL_LANE_X,
+      y: SCROLL_THUMB_TOP_LIMIT,
+      width: SCROLL_LANE_WIDTH,
+      height: 45,
+    };
+    let scrollOffset = 0;
+    let isThumbDragging = false;
+    let dragStartY = 0;
+    let dragStartOffset = 0;
+
+    const getMaxScroll = (): number => Math.max(0, meaningText.height - TEXT_VIEWPORT.height);
+    const getMaxThumbOffset = (): number =>
+      Math.max(0, SCROLL_THUMB_BOTTOM_LIMIT - SCROLL_THUMB_TOP_LIMIT - thumbShape.height);
+
+    const redrawThumb = (): void => {
+      thumb.clear();
+      thumb
+        .roundRect(thumbShape.x, thumbShape.y, thumbShape.width, thumbShape.height, 3)
+        .fill(SCROLL_THUMB_COLOR)
+        .roundRect(thumbShape.x, thumbShape.y, thumbShape.width, thumbShape.height, 3)
+        .stroke({ color: SCROLL_THUMB_BORDER_COLOR, width: 1.2 });
+    };
+
+    const syncScrollVisuals = (): void => {
+      const maxScroll = getMaxScroll();
+      const laneHeight = SCROLL_THUMB_BOTTOM_LIMIT - SCROLL_THUMB_TOP_LIMIT;
+      const ratio = maxScroll <= 0 ? 1 : TEXT_VIEWPORT.height / meaningText.height;
+      thumbShape.height = Math.max(SCROLL_THUMB_MIN_HEIGHT, laneHeight * ratio);
+
+      const maxThumbOffset = getMaxThumbOffset();
+      const scrollRatio = maxScroll <= 0 ? 0 : scrollOffset / maxScroll;
+      thumbShape.y = SCROLL_THUMB_TOP_LIMIT + maxThumbOffset * scrollRatio;
+
+      meaningText.y = TEXT_VIEWPORT.y - scrollOffset;
+      thumb.alpha = maxScroll > 0 ? 1 : 0.5;
+      redrawThumb();
+    };
+
+    const setScroll = (nextOffset: number): void => {
+      const maxScroll = getMaxScroll();
+      scrollOffset = Math.min(Math.max(nextOffset, 0), maxScroll);
+      syncScrollVisuals();
+    };
+
+    const scrollBy = (delta: number): void => {
+      setScroll(scrollOffset + delta);
+    };
+
+    const setScrollByThumbY = (thumbY: number): void => {
+      const maxScroll = getMaxScroll();
+      if (maxScroll <= 0) {
+        setScroll(0);
+        return;
+      }
+
+      const maxThumbOffset = getMaxThumbOffset();
+      const nextThumbOffset = Math.min(Math.max(thumbY - SCROLL_THUMB_TOP_LIMIT, 0), maxThumbOffset);
+      const scrollRatio = maxThumbOffset <= 0 ? 0 : nextThumbOffset / maxThumbOffset;
+      setScroll(scrollRatio * maxScroll);
+    };
+
+    const upButton = this.createScrollButton(UP_BUTTON_CENTER_X, UP_BUTTON_CENTER_Y, 'up', () => scrollBy(-SCROLL_STEP));
+    const downButton = this.createScrollButton(DOWN_BUTTON_CENTER_X, DOWN_BUTTON_CENTER_Y, 'down', () => scrollBy(SCROLL_STEP));
+
+    viewportHitArea.on('wheel', (event: FederatedWheelEvent) => {
+      scrollBy(event.deltaY);
+      event.preventDefault();
+    });
+
+    laneHitArea.on('pointertap', (event: FederatedPointerEvent) => {
+      setScrollByThumbY(event.global.y - thumbShape.height / 2);
+    });
+
+    thumb.on('pointerdown', (event: FederatedPointerEvent) => {
+      isThumbDragging = true;
+      dragStartY = event.global.y;
+      dragStartOffset = scrollOffset;
+    });
+
+    thumb.on('globalpointermove', (event: FederatedPointerEvent) => {
+      if (!isThumbDragging) {
+        return;
+      }
+
+      const maxScroll = getMaxScroll();
+      const maxThumbOffset = getMaxThumbOffset();
+      const thumbDelta = event.global.y - dragStartY;
+      const scrollDelta = maxThumbOffset <= 0 ? 0 : (thumbDelta / maxThumbOffset) * maxScroll;
+      setScroll(dragStartOffset + scrollDelta);
+    });
+
+    thumb.on('pointerup', () => {
+      isThumbDragging = false;
+    });
+    thumb.on('pointerupoutside', () => {
+      isThumbDragging = false;
+    });
+
+    scrollBox.addChild(
+      panel,
+      scrollBarBackground,
+      laneHitArea,
+      upButton,
+      downButton,
+      meaningText,
+      textMask,
+      viewportHitArea,
+      thumb,
+    );
+
+    syncScrollVisuals();
+    return scrollBox;
+  }
+
+  private createScrollButton(
+    centerX: number,
+    centerY: number,
+    direction: 'up' | 'down',
+    onClick: () => void,
+  ): Container {
+    const button = new Container();
+
+    const body = new Graphics().circle(centerX, centerY, SCROLL_BUTTON_RADIUS).fill(0xa62b30);
+    const trianglePoints =
+      direction === 'up'
+        ? [
+            centerX,
+            centerY - ARROW_HALF_HEIGHT,
+            centerX + ARROW_HALF_WIDTH,
+            centerY + ARROW_HALF_HEIGHT,
+            centerX - ARROW_HALF_WIDTH,
+            centerY + ARROW_HALF_HEIGHT,
+          ]
+        : [
+            centerX,
+            centerY + ARROW_HALF_HEIGHT,
+            centerX + ARROW_HALF_WIDTH,
+            centerY - ARROW_HALF_HEIGHT,
+            centerX - ARROW_HALF_WIDTH,
+            centerY - ARROW_HALF_HEIGHT,
+          ];
+    const icon = new Graphics().poly(trianglePoints).fill(FIGMA_COLORS.textLight);
+
+    const hitArea = new Graphics()
+      .circle(centerX, centerY, SCROLL_BUTTON_RADIUS + 2)
+      .fill({ color: 0xffffff, alpha: 0.001 });
+    hitArea.eventMode = 'static';
+    hitArea.cursor = 'pointer';
+    hitArea.on('pointertap', onClick);
+
+    button.addChild(body, icon, hitArea);
+    return button;
   }
 }
