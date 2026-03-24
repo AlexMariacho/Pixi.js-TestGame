@@ -5,6 +5,12 @@
 This project is a Pixi.js-based UI application with screen navigation.
 The architecture is intentionally simple: screens, shared UI components, and one UI manager.
 
+## Detailed docs (for agents)
+
+- UI architecture: [docs/ui-architecture.md](docs/ui-architecture.md)
+- UI layout and coordinates: [docs/ui-layout-coordinates.md](docs/ui-layout-coordinates.md)
+- Figma sync workflow: [docs/figma-sync.md](docs/figma-sync.md)
+
 ## Folder structure
 
 ```text
@@ -12,6 +18,18 @@ src/
   app/
     createApp.ts        # Pixi app initialization and screen registration
     bootstrap.ts        # Bootstraps app into DOM container
+
+  assets/
+    figma/
+      coordinates.template.json # Exported node coordinates for layout sync
+      page-0-1.raw.json         # Raw Figma node payload (node 0:1)
+      ui-decisions.md           # Figma-to-Pixi mapping notes
+    textures/
+      figma/                # Exported frame textures from Figma
+    fonts/
+      loadFigmaFonts.ts     # Runtime font loading helper
+      figma/                # Bundled Figma fonts
+    sounds/
 
   core/
     constants.ts        # App-level constants
@@ -23,23 +41,18 @@ src/
       screenIds.ts      # Centralized screen IDs
 
     screens/
-      BaseScreen.ts         # Base class for all screens
-      MainMenuScreen.ts     # Main menu screen
-      SettingsScreen.ts     # Settings screen
-      ProfileScreen.ts      # Profile screen
+      BaseScreen.ts             # Base class for all screens
+      MainScreen.ts             # Role selection screen
+      DispatcherResultScreen.ts # Result screen for "dispatcher"
+      MeaningResultScreen.ts    # Result screen for "meaning"
 
     components/
-      Button.ts         # Reusable button factory
-      Label.ts          # Reusable label factory
-      Panel.ts          # Reusable panel factory
+      OracleCard.ts     # Reusable card shell and controls
+      ClickArea.ts      # Interaction hit-area helper
+      designTokens.ts   # Shared Figma-aligned colors/fonts/layout
 
     transitions/
       fadeTransition.ts # Transition hook (placeholder)
-
-  assets/
-    textures/
-    fonts/
-    sounds/
 
   utils/
     eventBus.ts         # Lightweight typed event bus

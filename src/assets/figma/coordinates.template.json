@@ -1,0 +1,1737 @@
+﻿{
+    "meta":  {
+                 "figmaFileUrl":  "https://www.figma.com/design/kWIy02Wro09TYXsrd21H4y/%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5?node-id=0-1\u0026p=f\u0026t=SWEI9Fyf2N6ddqsK-0",
+                 "fileKey":  "kWIy02Wro09TYXsrd21H4y",
+                 "rootNodeId":  "0:1",
+                 "source":  "figma-api-x-figma-token",
+                 "exportedAtIso":  "2026-03-24T10:59:35.0703549Z",
+                 "notes":  "Extracted from Figma API because Figma MCP OAuth handshake is not available in current session."
+             },
+    "frames":  [
+                   {
+                       "nodeId":  "1:2",
+                       "name":  "Desktop - 1",
+                       "type":  "FRAME",
+                       "x":  0,
+                       "y":  0,
+                       "width":  1440,
+                       "height":  1024,
+                       "rotation":  0,
+                       "visible":  true,
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       },
+                       "children":  [
+                                        {
+                                            "nodeId":  "1:26",
+                                            "name":  "Rectangle 3",
+                                            "type":  "RECTANGLE",
+                                            "x":  0,
+                                            "y":  0,
+                                            "width":  1440,
+                                            "height":  1024,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:58",
+                                            "name":  "Frame 2",
+                                            "type":  "FRAME",
+                                            "x":  460,
+                                            "y":  302,
+                                            "width":  520,
+                                            "height":  420,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:63",
+                                                                 "name":  "Union",
+                                                                 "type":  "BOOLEAN_OPERATION",
+                                                                 "x":  470,
+                                                                 "y":  205,
+                                                                 "width":  500,
+                                                                 "height":  507,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:3",
+                                                                                      "name":  "Rectangle 1",
+                                                                                      "type":  "RECTANGLE",
+                                                                                      "x":  470,
+                                                                                      "y":  312,
+                                                                                      "width":  500,
+                                                                                      "height":  400,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:62",
+                                                                                      "name":  "Ellipse 2",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  541,
+                                                                                      "y":  205,
+                                                                                      "width":  357,
+                                                                                      "height":  357,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:8",
+                                            "name":  "ДОБРЫЙ ВЕЧЕР",
+                                            "type":  "TEXT",
+                                            "x":  521,
+                                            "y":  400,
+                                            "width":  398,
+                                            "height":  52,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "ДОБРЫЙ ВЕЧЕР",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Ruslan Display",
+                                                              "fontSize":  48.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  52.080001831054688
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:22",
+                                            "name":  "я диспетчер",
+                                            "type":  "TEXT",
+                                            "x":  627,
+                                            "y":  469,
+                                            "width":  185,
+                                            "height":  58,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "я диспетчер",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Alumni Sans",
+                                                              "fontSize":  48.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  57.600002288818359
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:14",
+                                            "name":  "Group 1",
+                                            "type":  "GROUP",
+                                            "x":  869,
+                                            "y":  570,
+                                            "width":  50,
+                                            "height":  50,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:9",
+                                                                 "name":  "Ellipse 1",
+                                                                 "type":  "ELLIPSE",
+                                                                 "x":  869,
+                                                                 "y":  570,
+                                                                 "width":  50,
+                                                                 "height":  50,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:13",
+                                                                 "name":  "Polygon 1",
+                                                                 "type":  "REGULAR_POLYGON",
+                                                                 "x":  879.556,
+                                                                 "y":  580,
+                                                                 "width":  29.444,
+                                                                 "height":  29.444,
+                                                                 "rotation":  1.570796,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:15",
+                                            "name":  "Group 2",
+                                            "type":  "GROUP",
+                                            "x":  521,
+                                            "y":  570,
+                                            "width":  50,
+                                            "height":  50,
+                                            "rotation":  -3.141593,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:16",
+                                                                 "name":  "Ellipse 1",
+                                                                 "type":  "ELLIPSE",
+                                                                 "x":  521,
+                                                                 "y":  570,
+                                                                 "width":  50,
+                                                                 "height":  50,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:17",
+                                                                 "name":  "Polygon 1",
+                                                                 "type":  "REGULAR_POLYGON",
+                                                                 "x":  531,
+                                                                 "y":  580.556,
+                                                                 "width":  29.444,
+                                                                 "height":  29.444,
+                                                                 "rotation":  1.570796,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:19",
+                                            "name":  "Rectangle 2",
+                                            "type":  "RECTANGLE",
+                                            "x":  595,
+                                            "y":  560,
+                                            "width":  250,
+                                            "height":  70,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:20",
+                                            "name":  "ВЫБРАТЬ",
+                                            "type":  "TEXT",
+                                            "x":  638,
+                                            "y":  582,
+                                            "width":  164,
+                                            "height":  35,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "ВЫБРАТЬ",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Ruslan Display",
+                                                              "fontSize":  32.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  34.720001220703125
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:75",
+                                            "name":  "Group 4",
+                                            "type":  "GROUP",
+                                            "x":  647,
+                                            "y":  222,
+                                            "width":  145.352,
+                                            "height":  145.352,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:74",
+                                                                 "name":  "Star 1",
+                                                                 "type":  "STAR",
+                                                                 "x":  647,
+                                                                 "y":  222,
+                                                                 "width":  145.352,
+                                                                 "height":  145.352,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:72",
+                                                                 "name":  "Group 3",
+                                                                 "type":  "GROUP",
+                                                                 "x":  678.645,
+                                                                 "y":  252.963,
+                                                                 "width":  83.427,
+                                                                 "height":  83.427,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:68",
+                                                                                      "name":  "Polygon 2",
+                                                                                      "type":  "REGULAR_POLYGON",
+                                                                                      "x":  678.645,
+                                                                                      "y":  252.963,
+                                                                                      "width":  83.427,
+                                                                                      "height":  83.427,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:69",
+                                                                                      "name":  "Ellipse 3",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  707.232,
+                                                                                      "y":  280.966,
+                                                                                      "width":  26.837,
+                                                                                      "height":  26.837,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:70",
+                                                                                      "name":  "Ellipse 4",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  715.983,
+                                                                                      "y":  289.717,
+                                                                                      "width":  9.334,
+                                                                                      "height":  9.334,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             }
+                                                         ]
+                                        }
+                                    ]
+                   },
+                   {
+                       "nodeId":  "1:27",
+                       "name":  "Desktop - 2",
+                       "type":  "FRAME",
+                       "x":  1638,
+                       "y":  0,
+                       "width":  1440,
+                       "height":  1024,
+                       "rotation":  0,
+                       "visible":  true,
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       },
+                       "children":  [
+                                        {
+                                            "nodeId":  "1:30",
+                                            "name":  "Rectangle 3",
+                                            "type":  "RECTANGLE",
+                                            "x":  1638,
+                                            "y":  0,
+                                            "width":  1440,
+                                            "height":  1024,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:64",
+                                            "name":  "Union",
+                                            "type":  "BOOLEAN_OPERATION",
+                                            "x":  2108,
+                                            "y":  205,
+                                            "width":  500,
+                                            "height":  507,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:65",
+                                                                 "name":  "Rectangle 1",
+                                                                 "type":  "RECTANGLE",
+                                                                 "x":  2108,
+                                                                 "y":  312,
+                                                                 "width":  500,
+                                                                 "height":  400,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:66",
+                                                                 "name":  "Ellipse 2",
+                                                                 "type":  "ELLIPSE",
+                                                                 "x":  2179,
+                                                                 "y":  205,
+                                                                 "width":  357,
+                                                                 "height":  357,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:32",
+                                            "name":  "ДОБРЫЙ ВЕЧЕР",
+                                            "type":  "TEXT",
+                                            "x":  2159,
+                                            "y":  400,
+                                            "width":  398,
+                                            "height":  52,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "ДОБРЫЙ ВЕЧЕР",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Ruslan Display",
+                                                              "fontSize":  48.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  52.080001831054688
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:33",
+                                            "name":  "а что это значит?",
+                                            "type":  "TEXT",
+                                            "x":  2234,
+                                            "y":  469,
+                                            "width":  261,
+                                            "height":  58,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "а что это значит?",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Alumni Sans",
+                                                              "fontSize":  48.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  57.600002288818359
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:34",
+                                            "name":  "Group 1",
+                                            "type":  "GROUP",
+                                            "x":  2507,
+                                            "y":  570,
+                                            "width":  50,
+                                            "height":  50,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:35",
+                                                                 "name":  "Ellipse 1",
+                                                                 "type":  "ELLIPSE",
+                                                                 "x":  2507,
+                                                                 "y":  570,
+                                                                 "width":  50,
+                                                                 "height":  50,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:36",
+                                                                 "name":  "Polygon 1",
+                                                                 "type":  "REGULAR_POLYGON",
+                                                                 "x":  2517.556,
+                                                                 "y":  580,
+                                                                 "width":  29.444,
+                                                                 "height":  29.444,
+                                                                 "rotation":  1.570796,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:37",
+                                            "name":  "Group 2",
+                                            "type":  "GROUP",
+                                            "x":  2159,
+                                            "y":  570,
+                                            "width":  50,
+                                            "height":  50,
+                                            "rotation":  -3.141593,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:38",
+                                                                 "name":  "Ellipse 1",
+                                                                 "type":  "ELLIPSE",
+                                                                 "x":  2159,
+                                                                 "y":  570,
+                                                                 "width":  50,
+                                                                 "height":  50,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:39",
+                                                                 "name":  "Polygon 1",
+                                                                 "type":  "REGULAR_POLYGON",
+                                                                 "x":  2169,
+                                                                 "y":  580.556,
+                                                                 "width":  29.444,
+                                                                 "height":  29.444,
+                                                                 "rotation":  1.570796,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:40",
+                                            "name":  "Rectangle 2",
+                                            "type":  "RECTANGLE",
+                                            "x":  2233,
+                                            "y":  560,
+                                            "width":  250,
+                                            "height":  70,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:76",
+                                            "name":  "Group 5",
+                                            "type":  "GROUP",
+                                            "x":  2285,
+                                            "y":  222,
+                                            "width":  145.352,
+                                            "height":  145.352,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:77",
+                                                                 "name":  "Star 1",
+                                                                 "type":  "STAR",
+                                                                 "x":  2285,
+                                                                 "y":  222,
+                                                                 "width":  145.352,
+                                                                 "height":  145.352,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:78",
+                                                                 "name":  "Group 3",
+                                                                 "type":  "GROUP",
+                                                                 "x":  2316.645,
+                                                                 "y":  252.963,
+                                                                 "width":  83.427,
+                                                                 "height":  83.427,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:79",
+                                                                                      "name":  "Polygon 2",
+                                                                                      "type":  "REGULAR_POLYGON",
+                                                                                      "x":  2316.645,
+                                                                                      "y":  252.963,
+                                                                                      "width":  83.427,
+                                                                                      "height":  83.427,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:80",
+                                                                                      "name":  "Ellipse 3",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  2345.232,
+                                                                                      "y":  280.966,
+                                                                                      "width":  26.837,
+                                                                                      "height":  26.837,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:81",
+                                                                                      "name":  "Ellipse 4",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  2353.983,
+                                                                                      "y":  289.717,
+                                                                                      "width":  9.334,
+                                                                                      "height":  9.334,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:41",
+                                            "name":  "ВЫБРАТЬ",
+                                            "type":  "TEXT",
+                                            "x":  2276,
+                                            "y":  582,
+                                            "width":  164,
+                                            "height":  35,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "ВЫБРАТЬ",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Ruslan Display",
+                                                              "fontSize":  32.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  34.720001220703125
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        }
+                                    ]
+                   },
+                   {
+                       "nodeId":  "1:144",
+                       "name":  "Почему вообще люди ждут конца света? И почему, если таковой предстоит, он обязательно должен быть для большинства человеческого рода ужасным?.. Ответ на первый вопрос состоит, по-видимому, в том, что существование мира, как подсказывает людям разум, имеет ценность лишь постольку, поскольку разумные существа соответствуют в нем конечной цели своего бытия; если же последняя оказывается недостижимой, то сотворенное бытие теряет в их глазах смысл, как спектакль без развязки и замысла. Ответ на второй вопрос основывается на мнении о безнадежной испорченности человеческого рода, ужасный конец которого представляется подавляющему большинству людей единственно соответствующим высшей мудрости и справедливости.",
+                       "type":  "TEXT",
+                       "x":  3140,
+                       "y":  1591,
+                       "width":  273,
+                       "height":  289,
+                       "rotation":  0,
+                       "visible":  true,
+                       "text":  "Почему вообще люди ждут конца света? \nИ почему, если таковой предстоит, он обязательно\nдолжен быть для большинства человеческого рода\nужасным?..\nОтвет на первый вопрос состоит, по-видимому,\nв том, что существование мира, как подсказывает\nлюдям разум, имеет ценность лишь постольку,\nпоскольку разумные существа соответствуют\nв нем конечной цели своего бытия;\nесли же последняя оказывается недостижимой, то\nсотворенное бытие теряет в их глазах смысл, как\nспектакль без развязки и замысла.\nОтвет на второй вопрос основывается на мнении\nо безнадежной испорченности человеческого рода,\nужасный конец которого представляется\nподавляющему большинству людей единственно\nсоответствующим высшей мудрости и справедливости.",
+                       "textStyle":  {
+                                         "fontFamily":  "Anek Devanagari",
+                                         "fontSize":  10.0,
+                                         "fontWeight":  400,
+                                         "lineHeightPx":  17.055000305175781
+                                     },
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       }
+                   },
+                   {
+                       "nodeId":  "1:28",
+                       "name":  "Desktop - 3",
+                       "type":  "FRAME",
+                       "x":  0,
+                       "y":  1224,
+                       "width":  1440,
+                       "height":  1024,
+                       "rotation":  0,
+                       "visible":  true,
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       },
+                       "children":  [
+                                        {
+                                            "nodeId":  "1:44",
+                                            "name":  "Rectangle 3",
+                                            "type":  "RECTANGLE",
+                                            "x":  0,
+                                            "y":  1224,
+                                            "width":  1440,
+                                            "height":  1024,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:165",
+                                            "name":  "Frame 3",
+                                            "type":  "FRAME",
+                                            "x":  469,
+                                            "y":  1529,
+                                            "width":  520,
+                                            "height":  420,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:166",
+                                                                 "name":  "Union",
+                                                                 "type":  "BOOLEAN_OPERATION",
+                                                                 "x":  479,
+                                                                 "y":  1432,
+                                                                 "width":  500,
+                                                                 "height":  507,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:167",
+                                                                                      "name":  "Rectangle 1",
+                                                                                      "type":  "RECTANGLE",
+                                                                                      "x":  479,
+                                                                                      "y":  1539,
+                                                                                      "width":  500,
+                                                                                      "height":  400,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:168",
+                                                                                      "name":  "Ellipse 2",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  550,
+                                                                                      "y":  1432,
+                                                                                      "width":  357,
+                                                                                      "height":  357,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             },
+                                                             {
+                                                                 "nodeId":  "25:2",
+                                                                 "name":  "Group 11",
+                                                                 "type":  "GROUP",
+                                                                 "x":  704,
+                                                                 "y":  1814,
+                                                                 "width":  50,
+                                                                 "height":  50,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "25:3",
+                                                                                      "name":  "Group 6",
+                                                                                      "type":  "GROUP",
+                                                                                      "x":  704,
+                                                                                      "y":  1814,
+                                                                                      "width":  50,
+                                                                                      "height":  50,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      },
+                                                                                      "children":  [
+                                                                                                       {
+                                                                                                           "nodeId":  "25:4",
+                                                                                                           "name":  "Ellipse 1",
+                                                                                                           "type":  "ELLIPSE",
+                                                                                                           "x":  704,
+                                                                                                           "y":  1814,
+                                                                                                           "width":  50,
+                                                                                                           "height":  50,
+                                                                                                           "rotation":  0,
+                                                                                                           "visible":  true,
+                                                                                                           "constraints":  {
+                                                                                                                               "horizontal":  "LEFT",
+                                                                                                                               "vertical":  "TOP"
+                                                                                                                           }
+                                                                                                       }
+                                                                                                   ]
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "25:5",
+                                                                                      "name":  "Union",
+                                                                                      "type":  "BOOLEAN_OPERATION",
+                                                                                      "x":  709,
+                                                                                      "y":  1819,
+                                                                                      "width":  40.858,
+                                                                                      "height":  40.858,
+                                                                                      "rotation":  0.785398,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      },
+                                                                                      "children":  [
+                                                                                                       {
+                                                                                                           "nodeId":  "25:6",
+                                                                                                           "name":  "Rectangle 8",
+                                                                                                           "type":  "RECTANGLE",
+                                                                                                           "x":  717.172,
+                                                                                                           "y":  1827.172,
+                                                                                                           "width":  24.515,
+                                                                                                           "height":  24.515,
+                                                                                                           "rotation":  0,
+                                                                                                           "visible":  true,
+                                                                                                           "constraints":  {
+                                                                                                                               "horizontal":  "LEFT",
+                                                                                                                               "vertical":  "TOP"
+                                                                                                                           }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "nodeId":  "25:7",
+                                                                                                           "name":  "Rectangle 9",
+                                                                                                           "type":  "RECTANGLE",
+                                                                                                           "x":  717.172,
+                                                                                                           "y":  1827.172,
+                                                                                                           "width":  24.515,
+                                                                                                           "height":  24.515,
+                                                                                                           "rotation":  1.570796,
+                                                                                                           "visible":  true,
+                                                                                                           "constraints":  {
+                                                                                                                               "horizontal":  "LEFT",
+                                                                                                                               "vertical":  "TOP"
+                                                                                                                           }
+                                                                                                       }
+                                                                                                   ]
+                                                                                  }
+                                                                              ]
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:101",
+                                            "name":  "Group 6",
+                                            "type":  "GROUP",
+                                            "x":  686,
+                                            "y":  1596,
+                                            "width":  87,
+                                            "height":  21.516,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:95",
+                                                                 "name":  "Star 2",
+                                                                 "type":  "STAR",
+                                                                 "x":  686,
+                                                                 "y":  1596,
+                                                                 "width":  21.516,
+                                                                 "height":  21.516,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:96",
+                                                                 "name":  "Star 3",
+                                                                 "type":  "STAR",
+                                                                 "x":  718.742,
+                                                                 "y":  1596,
+                                                                 "width":  21.516,
+                                                                 "height":  21.516,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:99",
+                                                                 "name":  "Star 5",
+                                                                 "type":  "STAR",
+                                                                 "x":  751.484,
+                                                                 "y":  1596,
+                                                                 "width":  21.516,
+                                                                 "height":  21.516,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:87",
+                                            "name":  "Group 5",
+                                            "type":  "GROUP",
+                                            "x":  657,
+                                            "y":  1443,
+                                            "width":  145.352,
+                                            "height":  145.352,
+                                            "rotation":  -3.141593,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:88",
+                                                                 "name":  "Star 1",
+                                                                 "type":  "STAR",
+                                                                 "x":  657,
+                                                                 "y":  1443,
+                                                                 "width":  145.352,
+                                                                 "height":  145.352,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:89",
+                                                                 "name":  "Group 3",
+                                                                 "type":  "GROUP",
+                                                                 "x":  687.28,
+                                                                 "y":  1473.963,
+                                                                 "width":  83.427,
+                                                                 "height":  83.427,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:90",
+                                                                                      "name":  "Polygon 2",
+                                                                                      "type":  "REGULAR_POLYGON",
+                                                                                      "x":  687.28,
+                                                                                      "y":  1473.963,
+                                                                                      "width":  83.427,
+                                                                                      "height":  83.427,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:91",
+                                                                                      "name":  "Ellipse 3",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  715.284,
+                                                                                      "y":  1502.549,
+                                                                                      "width":  26.837,
+                                                                                      "height":  26.837,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:92",
+                                                                                      "name":  "Ellipse 4",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  724.035,
+                                                                                      "y":  1511.3,
+                                                                                      "width":  9.334,
+                                                                                      "height":  9.334,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:46",
+                                            "name":  "ДОБРЫЙ ВЕЧЕР",
+                                            "type":  "TEXT",
+                                            "x":  521,
+                                            "y":  1624,
+                                            "width":  398,
+                                            "height":  52,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "ДОБРЫЙ ВЕЧЕР",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Ruslan Display",
+                                                              "fontSize":  48.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  52.080001831054688
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:47",
+                                            "name":  "вот и думайте",
+                                            "type":  "TEXT",
+                                            "x":  613,
+                                            "y":  1693,
+                                            "width":  213,
+                                            "height":  58,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "вот и думайте",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Alumni Sans",
+                                                              "fontSize":  48.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  57.600002288818359
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        }
+                                    ]
+                   },
+                   {
+                       "nodeId":  "1:114",
+                       "name":  "Desktop - 4",
+                       "type":  "FRAME",
+                       "x":  1638,
+                       "y":  1224,
+                       "width":  1440,
+                       "height":  1024,
+                       "rotation":  0,
+                       "visible":  true,
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       },
+                       "children":  [
+                                        {
+                                            "nodeId":  "1:116",
+                                            "name":  "Rectangle 3",
+                                            "type":  "RECTANGLE",
+                                            "x":  1638,
+                                            "y":  1224,
+                                            "width":  1440,
+                                            "height":  1024,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:170",
+                                            "name":  "Union",
+                                            "type":  "BOOLEAN_OPERATION",
+                                            "x":  2117,
+                                            "y":  1422,
+                                            "width":  500,
+                                            "height":  507,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:171",
+                                                                 "name":  "Rectangle 1",
+                                                                 "type":  "RECTANGLE",
+                                                                 "x":  2117,
+                                                                 "y":  1529,
+                                                                 "width":  500,
+                                                                 "height":  400,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:172",
+                                                                 "name":  "Ellipse 2",
+                                                                 "type":  "ELLIPSE",
+                                                                 "x":  2188,
+                                                                 "y":  1422,
+                                                                 "width":  357,
+                                                                 "height":  357,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:121",
+                                            "name":  "Group 6",
+                                            "type":  "GROUP",
+                                            "x":  2324,
+                                            "y":  1596,
+                                            "width":  87,
+                                            "height":  21.516,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:122",
+                                                                 "name":  "Star 2",
+                                                                 "type":  "STAR",
+                                                                 "x":  2324,
+                                                                 "y":  1596,
+                                                                 "width":  21.516,
+                                                                 "height":  21.516,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:123",
+                                                                 "name":  "Star 3",
+                                                                 "type":  "STAR",
+                                                                 "x":  2356.742,
+                                                                 "y":  1596,
+                                                                 "width":  21.516,
+                                                                 "height":  21.516,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:124",
+                                                                 "name":  "Star 5",
+                                                                 "type":  "STAR",
+                                                                 "x":  2389.484,
+                                                                 "y":  1596,
+                                                                 "width":  21.516,
+                                                                 "height":  21.516,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:102",
+                                            "name":  "Rectangle 4",
+                                            "type":  "RECTANGLE",
+                                            "x":  2207,
+                                            "y":  1686,
+                                            "width":  321,
+                                            "height":  153,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "1:147",
+                                            "name":  "Group 9",
+                                            "type":  "GROUP",
+                                            "x":  2500,
+                                            "y":  1693,
+                                            "width":  19,
+                                            "height":  138,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:103",
+                                                                 "name":  "Rectangle 5",
+                                                                 "type":  "RECTANGLE",
+                                                                 "x":  2500,
+                                                                 "y":  1693,
+                                                                 "width":  19,
+                                                                 "height":  138,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:106",
+                                                                 "name":  "Group 7",
+                                                                 "type":  "GROUP",
+                                                                 "x":  2502,
+                                                                 "y":  1694.966,
+                                                                 "width":  15,
+                                                                 "height":  14.744,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:104",
+                                                                                      "name":  "Ellipse 5",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  2502,
+                                                                                      "y":  1694.966,
+                                                                                      "width":  15,
+                                                                                      "height":  14.744,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:105",
+                                                                                      "name":  "Polygon 3",
+                                                                                      "type":  "REGULAR_POLYGON",
+                                                                                      "x":  2505.75,
+                                                                                      "y":  1698.652,
+                                                                                      "width":  7.5,
+                                                                                      "height":  7.372,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:107",
+                                                                 "name":  "Group 8",
+                                                                 "type":  "GROUP",
+                                                                 "x":  2502,
+                                                                 "y":  1814,
+                                                                 "width":  15,
+                                                                 "height":  14.744,
+                                                                 "rotation":  -3.141593,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:108",
+                                                                                      "name":  "Ellipse 5",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  2502,
+                                                                                      "y":  1814,
+                                                                                      "width":  15,
+                                                                                      "height":  14.744,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:109",
+                                                                                      "name":  "Polygon 3",
+                                                                                      "type":  "REGULAR_POLYGON",
+                                                                                      "x":  2505.75,
+                                                                                      "y":  1817.686,
+                                                                                      "width":  7.5,
+                                                                                      "height":  7.372,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:111",
+                                                                 "name":  "Rectangle 6",
+                                                                 "type":  "RECTANGLE",
+                                                                 "x":  2502,
+                                                                 "y":  1717,
+                                                                 "width":  15,
+                                                                 "height":  45,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:125",
+                                            "name":  "Group 5",
+                                            "type":  "GROUP",
+                                            "x":  2295,
+                                            "y":  1443,
+                                            "width":  145.352,
+                                            "height":  145.352,
+                                            "rotation":  -3.141593,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "1:126",
+                                                                 "name":  "Star 1",
+                                                                 "type":  "STAR",
+                                                                 "x":  2295,
+                                                                 "y":  1443,
+                                                                 "width":  145.352,
+                                                                 "height":  145.352,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 }
+                                                             },
+                                                             {
+                                                                 "nodeId":  "1:127",
+                                                                 "name":  "Group 3",
+                                                                 "type":  "GROUP",
+                                                                 "x":  2325.28,
+                                                                 "y":  1473.963,
+                                                                 "width":  83.427,
+                                                                 "height":  83.427,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "1:128",
+                                                                                      "name":  "Polygon 2",
+                                                                                      "type":  "REGULAR_POLYGON",
+                                                                                      "x":  2325.28,
+                                                                                      "y":  1473.963,
+                                                                                      "width":  83.427,
+                                                                                      "height":  83.427,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:129",
+                                                                                      "name":  "Ellipse 3",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  2353.284,
+                                                                                      "y":  1502.549,
+                                                                                      "width":  26.837,
+                                                                                      "height":  26.837,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "1:130",
+                                                                                      "name":  "Ellipse 4",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  2362.035,
+                                                                                      "y":  1511.3,
+                                                                                      "width":  9.334,
+                                                                                      "height":  9.334,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "nodeId":  "1:131",
+                                            "name":  "ДОБРЫЙ ВЕЧЕР",
+                                            "type":  "TEXT",
+                                            "x":  2159,
+                                            "y":  1624,
+                                            "width":  398,
+                                            "height":  52,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "ДОБРЫЙ ВЕЧЕР",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Ruslan Display",
+                                                              "fontSize":  48.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  52.080001831054688
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "23:2",
+                                            "name":  "Почему вообще люди ждут конца света? И почему, если таковой предстоит, он обязательно должен быть для большинства человеческого рода ужасным?.. Ответ на первый вопрос состоит, по-видимому, в том, что существование мира, как подсказывает людям разум, имеет ценность лишь постольку, поскольку разумные существа соответствуют",
+                                            "type":  "TEXT",
+                                            "x":  2227,
+                                            "y":  1698,
+                                            "width":  253,
+                                            "height":  136,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "text":  "Почему вообще люди ждут конца света? \nИ почему, если таковой предстоит, он обязательно\nдолжен быть для большинства человеческого рода\nужасным?..\nОтвет на первый вопрос состоит, по-видимому,\nв том, что существование мира, как подсказывает\nлюдям разум, имеет ценность лишь постольку,\nпоскольку разумные существа соответствуют",
+                                            "textStyle":  {
+                                                              "fontFamily":  "Anek Devanagari",
+                                                              "fontSize":  10.0,
+                                                              "fontWeight":  400,
+                                                              "lineHeightPx":  17.055000305175781
+                                                          },
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            }
+                                        },
+                                        {
+                                            "nodeId":  "23:12",
+                                            "name":  "Group 10",
+                                            "type":  "GROUP",
+                                            "x":  2342,
+                                            "y":  1855,
+                                            "width":  50,
+                                            "height":  50,
+                                            "rotation":  0,
+                                            "visible":  true,
+                                            "constraints":  {
+                                                                "horizontal":  "LEFT",
+                                                                "vertical":  "TOP"
+                                                            },
+                                            "children":  [
+                                                             {
+                                                                 "nodeId":  "23:4",
+                                                                 "name":  "Group 6",
+                                                                 "type":  "GROUP",
+                                                                 "x":  2342,
+                                                                 "y":  1855,
+                                                                 "width":  50,
+                                                                 "height":  50,
+                                                                 "rotation":  0,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "23:5",
+                                                                                      "name":  "Ellipse 1",
+                                                                                      "type":  "ELLIPSE",
+                                                                                      "x":  2342,
+                                                                                      "y":  1855,
+                                                                                      "width":  50,
+                                                                                      "height":  50,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             },
+                                                             {
+                                                                 "nodeId":  "23:11",
+                                                                 "name":  "Union",
+                                                                 "type":  "BOOLEAN_OPERATION",
+                                                                 "x":  2347,
+                                                                 "y":  1860,
+                                                                 "width":  40.858,
+                                                                 "height":  40.858,
+                                                                 "rotation":  0.785398,
+                                                                 "visible":  true,
+                                                                 "constraints":  {
+                                                                                     "horizontal":  "LEFT",
+                                                                                     "vertical":  "TOP"
+                                                                                 },
+                                                                 "children":  [
+                                                                                  {
+                                                                                      "nodeId":  "23:8",
+                                                                                      "name":  "Rectangle 8",
+                                                                                      "type":  "RECTANGLE",
+                                                                                      "x":  2355.172,
+                                                                                      "y":  1868.172,
+                                                                                      "width":  24.515,
+                                                                                      "height":  24.515,
+                                                                                      "rotation":  0,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  },
+                                                                                  {
+                                                                                      "nodeId":  "23:9",
+                                                                                      "name":  "Rectangle 9",
+                                                                                      "type":  "RECTANGLE",
+                                                                                      "x":  2355.172,
+                                                                                      "y":  1868.172,
+                                                                                      "width":  24.515,
+                                                                                      "height":  24.515,
+                                                                                      "rotation":  1.570796,
+                                                                                      "visible":  true,
+                                                                                      "constraints":  {
+                                                                                                          "horizontal":  "LEFT",
+                                                                                                          "vertical":  "TOP"
+                                                                                                      }
+                                                                                  }
+                                                                              ]
+                                                             }
+                                                         ]
+                                        }
+                                    ]
+                   },
+                   {
+                       "nodeId":  "1:113",
+                       "name":  "Arrow 1",
+                       "type":  "VECTOR",
+                       "x":  720,
+                       "y":  1067,
+                       "width":  0,
+                       "height":  114,
+                       "rotation":  1.570796,
+                       "visible":  true,
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       }
+                   },
+                   {
+                       "nodeId":  "1:142",
+                       "name":  "Arrow 2",
+                       "type":  "VECTOR",
+                       "x":  2358,
+                       "y":  1067,
+                       "width":  0,
+                       "height":  114,
+                       "rotation":  1.570796,
+                       "visible":  true,
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       }
+                   },
+                   {
+                       "nodeId":  "1:148",
+                       "name":  "Rectangle 7",
+                       "type":  "RECTANGLE",
+                       "x":  3103,
+                       "y":  1545,
+                       "width":  348,
+                       "height":  381,
+                       "rotation":  0,
+                       "visible":  true,
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       }
+                   },
+                   {
+                       "nodeId":  "1:149",
+                       "name":  "ТЕКСТ",
+                       "type":  "TEXT",
+                       "x":  3103,
+                       "y":  1477,
+                       "width":  116,
+                       "height":  68,
+                       "rotation":  0,
+                       "visible":  true,
+                       "text":  "ТЕКСТ",
+                       "textStyle":  {
+                                         "fontFamily":  "Anek Devanagari",
+                                         "fontSize":  40.0,
+                                         "fontWeight":  400,
+                                         "lineHeightPx":  68.220001220703125
+                                     },
+                       "constraints":  {
+                                           "horizontal":  "LEFT",
+                                           "vertical":  "TOP"
+                                       }
+                   }
+               ]
+}
