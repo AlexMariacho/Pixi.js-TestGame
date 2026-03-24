@@ -1,0 +1,562 @@
+﻿[
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:2",
+        "node_name":  "Desktop-1",
+        "node_type":  "FRAME",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Desktop-1__FRAME__1-2.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:9",
+        "node_name":  "Ellipse-1",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Ellipse-1__ELLIPSE__1-9.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:16",
+        "node_name":  "Ellipse-1",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Ellipse-1__ELLIPSE__1-16.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:62",
+        "node_name":  "Ellipse-2",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Ellipse-2__ELLIPSE__1-62.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:69",
+        "node_name":  "Ellipse-3",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Ellipse-3__ELLIPSE__1-69.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:70",
+        "node_name":  "Ellipse-4",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Ellipse-4__ELLIPSE__1-70.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:58",
+        "node_name":  "Frame-2",
+        "node_type":  "FRAME",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Frame-2__FRAME__1-58.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:14",
+        "node_name":  "Group-1",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Group-1__GROUP__1-14.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:15",
+        "node_name":  "Group-2",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Group-2__GROUP__1-15.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:72",
+        "node_name":  "Group-3",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Group-3__GROUP__1-72.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:75",
+        "node_name":  "Group-4",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Group-4__GROUP__1-75.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:3",
+        "node_name":  "Rectangle-1",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Rectangle-1__RECTANGLE__1-3.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:19",
+        "node_name":  "Rectangle-2",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Rectangle-2__RECTANGLE__1-19.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:26",
+        "node_name":  "Rectangle-3",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Rectangle-3__RECTANGLE__1-26.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:74",
+        "node_name":  "Star-1",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Star-1__STAR__1-74.svg"
+    },
+    {
+        "frame":  "Desktop-1",
+        "node_id":  "1:63",
+        "node_name":  "Union",
+        "node_type":  "BOOLEAN_OPERATION",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-1\\Union__BOOLEAN_OPERATION__1-63.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:27",
+        "node_name":  "Desktop-2",
+        "node_type":  "FRAME",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Desktop-2__FRAME__1-27.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:38",
+        "node_name":  "Ellipse-1",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Ellipse-1__ELLIPSE__1-38.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:35",
+        "node_name":  "Ellipse-1",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Ellipse-1__ELLIPSE__1-35.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:66",
+        "node_name":  "Ellipse-2",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Ellipse-2__ELLIPSE__1-66.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:80",
+        "node_name":  "Ellipse-3",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Ellipse-3__ELLIPSE__1-80.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:81",
+        "node_name":  "Ellipse-4",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Ellipse-4__ELLIPSE__1-81.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:34",
+        "node_name":  "Group-1",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Group-1__GROUP__1-34.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:37",
+        "node_name":  "Group-2",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Group-2__GROUP__1-37.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:78",
+        "node_name":  "Group-3",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Group-3__GROUP__1-78.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:76",
+        "node_name":  "Group-5",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Group-5__GROUP__1-76.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:65",
+        "node_name":  "Rectangle-1",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Rectangle-1__RECTANGLE__1-65.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:40",
+        "node_name":  "Rectangle-2",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Rectangle-2__RECTANGLE__1-40.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:30",
+        "node_name":  "Rectangle-3",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Rectangle-3__RECTANGLE__1-30.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:77",
+        "node_name":  "Star-1",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Star-1__STAR__1-77.svg"
+    },
+    {
+        "frame":  "Desktop-2",
+        "node_id":  "1:64",
+        "node_name":  "Union",
+        "node_type":  "BOOLEAN_OPERATION",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-2\\Union__BOOLEAN_OPERATION__1-64.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:28",
+        "node_name":  "Desktop-3",
+        "node_type":  "FRAME",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Desktop-3__FRAME__1-28.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "25:4",
+        "node_name":  "Ellipse-1",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Ellipse-1__ELLIPSE__25-4.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:168",
+        "node_name":  "Ellipse-2",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Ellipse-2__ELLIPSE__1-168.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:91",
+        "node_name":  "Ellipse-3",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Ellipse-3__ELLIPSE__1-91.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:92",
+        "node_name":  "Ellipse-4",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Ellipse-4__ELLIPSE__1-92.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:165",
+        "node_name":  "Frame-3",
+        "node_type":  "FRAME",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Frame-3__FRAME__1-165.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "25:2",
+        "node_name":  "Group-11",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Group-11__GROUP__25-2.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:89",
+        "node_name":  "Group-3",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Group-3__GROUP__1-89.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:87",
+        "node_name":  "Group-5",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Group-5__GROUP__1-87.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "25:3",
+        "node_name":  "Group-6",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Group-6__GROUP__25-3.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:101",
+        "node_name":  "Group-6",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Group-6__GROUP__1-101.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:167",
+        "node_name":  "Rectangle-1",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Rectangle-1__RECTANGLE__1-167.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:44",
+        "node_name":  "Rectangle-3",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Rectangle-3__RECTANGLE__1-44.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "25:6",
+        "node_name":  "Rectangle-8",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Rectangle-8__RECTANGLE__25-6.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "25:7",
+        "node_name":  "Rectangle-9",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Rectangle-9__RECTANGLE__25-7.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:88",
+        "node_name":  "Star-1",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Star-1__STAR__1-88.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:95",
+        "node_name":  "Star-2",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Star-2__STAR__1-95.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:96",
+        "node_name":  "Star-3",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Star-3__STAR__1-96.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:99",
+        "node_name":  "Star-5",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Star-5__STAR__1-99.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "25:5",
+        "node_name":  "Union",
+        "node_type":  "BOOLEAN_OPERATION",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Union__BOOLEAN_OPERATION__25-5.svg"
+    },
+    {
+        "frame":  "Desktop-3",
+        "node_id":  "1:166",
+        "node_name":  "Union",
+        "node_type":  "BOOLEAN_OPERATION",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-3\\Union__BOOLEAN_OPERATION__1-166.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:114",
+        "node_name":  "Desktop-4",
+        "node_type":  "FRAME",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Desktop-4__FRAME__1-114.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "23:5",
+        "node_name":  "Ellipse-1",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Ellipse-1__ELLIPSE__23-5.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:172",
+        "node_name":  "Ellipse-2",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Ellipse-2__ELLIPSE__1-172.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:129",
+        "node_name":  "Ellipse-3",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Ellipse-3__ELLIPSE__1-129.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:130",
+        "node_name":  "Ellipse-4",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Ellipse-4__ELLIPSE__1-130.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:108",
+        "node_name":  "Ellipse-5",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Ellipse-5__ELLIPSE__1-108.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:104",
+        "node_name":  "Ellipse-5",
+        "node_type":  "ELLIPSE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Ellipse-5__ELLIPSE__1-104.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "23:12",
+        "node_name":  "Group-10",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-10__GROUP__23-12.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:127",
+        "node_name":  "Group-3",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-3__GROUP__1-127.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:125",
+        "node_name":  "Group-5",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-5__GROUP__1-125.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "23:4",
+        "node_name":  "Group-6",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-6__GROUP__23-4.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:121",
+        "node_name":  "Group-6",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-6__GROUP__1-121.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:106",
+        "node_name":  "Group-7",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-7__GROUP__1-106.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:107",
+        "node_name":  "Group-8",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-8__GROUP__1-107.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:147",
+        "node_name":  "Group-9",
+        "node_type":  "GROUP",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Group-9__GROUP__1-147.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:171",
+        "node_name":  "Rectangle-1",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Rectangle-1__RECTANGLE__1-171.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:116",
+        "node_name":  "Rectangle-3",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Rectangle-3__RECTANGLE__1-116.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:102",
+        "node_name":  "Rectangle-4",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Rectangle-4__RECTANGLE__1-102.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:103",
+        "node_name":  "Rectangle-5",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Rectangle-5__RECTANGLE__1-103.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:111",
+        "node_name":  "Rectangle-6",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Rectangle-6__RECTANGLE__1-111.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "23:8",
+        "node_name":  "Rectangle-8",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Rectangle-8__RECTANGLE__23-8.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "23:9",
+        "node_name":  "Rectangle-9",
+        "node_type":  "RECTANGLE",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Rectangle-9__RECTANGLE__23-9.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:126",
+        "node_name":  "Star-1",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Star-1__STAR__1-126.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:122",
+        "node_name":  "Star-2",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Star-2__STAR__1-122.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:123",
+        "node_name":  "Star-3",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Star-3__STAR__1-123.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:124",
+        "node_name":  "Star-5",
+        "node_type":  "STAR",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Star-5__STAR__1-124.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "23:11",
+        "node_name":  "Union",
+        "node_type":  "BOOLEAN_OPERATION",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Union__BOOLEAN_OPERATION__23-11.svg"
+    },
+    {
+        "frame":  "Desktop-4",
+        "node_id":  "1:170",
+        "node_name":  "Union",
+        "node_type":  "BOOLEAN_OPERATION",
+        "file":  "S:\\Projects\\Pixi.js-TestGame\\src\\assets\\textures\\figma\\desktop-elements-svg\\Desktop-4\\Union__BOOLEAN_OPERATION__1-170.svg"
+    }
+]
