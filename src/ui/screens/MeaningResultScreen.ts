@@ -2,7 +2,7 @@ import { Container, FederatedPointerEvent, FederatedWheelEvent, Graphics, Text }
 import type { UIManager } from '../manager/UIManager';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
-import { buildFrameScene } from '../components/figmaCsvScene';
+import { DESKTOP_4 } from './desktopFrames';
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 import { MEANING_RESULT_TEXT } from './meaningResultText';
 
@@ -32,11 +32,9 @@ export class MeaningResultScreen extends BaseScreen {
   }
 
   build(): void {
-    const frameScene = buildFrameScene('Desktop - 4', {
-      nodeIds: ['1:116', '1:170', '1:121', '1:125', '1:102', '1:147', '23:12'],
-    });
+    const frameScene = DESKTOP_4.buildScene();
 
-    const closeButtonSprite = frameScene.nodes.get('23:12')?.sprite;
+    const closeButtonSprite = frameScene.nodes.get(DESKTOP_4.elements.closeButtonGroup)?.sprite;
     const meaningScrollBox = this.createMeaningScrollBox();
 
     this.view.addChild(frameScene.container, meaningScrollBox);

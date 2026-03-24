@@ -3,7 +3,7 @@ import type { UIManager } from '../manager/UIManager';
 import { SCREEN_IDS } from '../manager/screenIds';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
-import { buildFrameScene } from '../components/figmaCsvScene';
+import { DESKTOP_1, DESKTOP_2 } from './desktopFrames';
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
 
 type MainState = 'dispatcher' | 'meaning';
@@ -32,13 +32,8 @@ export class MainScreen extends BaseScreen {
   constructor(private readonly uiManager: UIManager) {
     super();
 
-    this.desktop1Layer = buildFrameScene('Desktop - 1', {
-      nodeIds: ['1:26', '1:58', '1:75', '1:15', '1:14', '1:19'],
-    }).container;
-
-    this.desktop2Layer = buildFrameScene('Desktop - 2', {
-      nodeIds: ['1:30', '1:64', '1:76', '1:37', '1:34', '1:40'],
-    }).container;
+    this.desktop1Layer = DESKTOP_1.buildScene().container;
+    this.desktop2Layer = DESKTOP_2.buildScene().container;
   }
 
   build(): void {
