@@ -103,3 +103,4 @@ src/
 3. Any new screen must be registered in `UIManager` and added to `screenIds.ts`.
 4. Any shared UI element should be added to `ui/components`.
 5. Keep backward-compatible behavior unless explicitly asked to refactor.
+6. If changes affect UI (screens, UI components, layout, navigation visuals/interactions), add or update automated tests for that behavior and run the relevant test commands before finishing.
