@@ -24,6 +24,8 @@ export class DispatcherResultScreen extends BaseScreen {
     });
     resultLabel.position.set(613, 469);
 
+    const closeButton = createCircleSymbolButton({ centerX: 729, centerY: 656, symbol: '✕', symbolSize: 54 });
+
     this.view.addChild(
       createOracleCardFrame(),
       createOracleHeader({
@@ -34,9 +36,11 @@ export class DispatcherResultScreen extends BaseScreen {
         starsColor: 0xc8c9c6,
       }),
       resultLabel,
-      createCircleSymbolButton({ centerX: 729, centerY: 656, symbol: '✕', symbolSize: 54 }),
+      closeButton,
     );
 
-    this.view.addChild(createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack()));
+    this.view.addChild(
+      createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack(), { animateTarget: closeButton }),
+    );
   }
 }

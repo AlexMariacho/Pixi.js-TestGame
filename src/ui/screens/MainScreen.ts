@@ -31,6 +31,18 @@ export class MainScreen extends BaseScreen {
   }
 
   build(): void {
+    const leftArrowButton = createCircleSymbolButton({ centerX: 546, centerY: 595, symbol: '◀', symbolSize: 44 });
+    const rightArrowButton = createCircleSymbolButton({ centerX: 894, centerY: 595, symbol: '▶', symbolSize: 44 });
+    const selectButton = createActionButton({
+      x: SELECT_BUTTON_BOUNDS.x,
+      y: SELECT_BUTTON_BOUNDS.y,
+      width: SELECT_BUTTON_BOUNDS.width,
+      height: SELECT_BUTTON_BOUNDS.height,
+      label: 'ВЫБРАТЬ',
+      labelX: 638,
+      labelY: 582,
+    });
+
     this.view.addChild(
       createOracleCardFrame(),
       createOracleHeader({
@@ -38,23 +50,15 @@ export class MainScreen extends BaseScreen {
         titleBounds: { x: 521, y: 400, width: 398, height: 52 },
       }),
       this.roleLabel,
-      createCircleSymbolButton({ centerX: 546, centerY: 595, symbol: '◀', symbolSize: 44 }),
-      createCircleSymbolButton({ centerX: 894, centerY: 595, symbol: '▶', symbolSize: 44 }),
-      createActionButton({
-        x: SELECT_BUTTON_BOUNDS.x,
-        y: SELECT_BUTTON_BOUNDS.y,
-        width: SELECT_BUTTON_BOUNDS.width,
-        height: SELECT_BUTTON_BOUNDS.height,
-        label: 'ВЫБРАТЬ',
-        labelX: 638,
-        labelY: 582,
-      }),
+      leftArrowButton,
+      rightArrowButton,
+      selectButton,
     );
 
     this.view.addChild(
-      createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState()),
-      createClickArea(RIGHT_ARROW_BOUNDS, () => this.toggleState()),
-      createClickArea(SELECT_BUTTON_BOUNDS, () => this.selectCurrentState()),
+      createClickArea(LEFT_ARROW_BOUNDS, () => this.toggleState(), { animateTarget: leftArrowButton }),
+      createClickArea(RIGHT_ARROW_BOUNDS, () => this.toggleState(), { animateTarget: rightArrowButton }),
+      createClickArea(SELECT_BUTTON_BOUNDS, () => this.selectCurrentState(), { animateTarget: selectButton }),
     );
 
     this.syncState();

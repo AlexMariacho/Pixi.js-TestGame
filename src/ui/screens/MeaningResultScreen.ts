@@ -4,6 +4,7 @@ import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
 import { createCircleSymbolButton, createOracleCardFrame, createOracleHeader } from '../components/OracleCard';
 import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
+import { bindPressable } from '../components/pressable';
 
 const CLOSE_BUTTON_BOUNDS = { x: 704, y: 631, width: 50, height: 50 };
 const TEXT_PANEL_BOUNDS = { x: 569, y: 462, width: 321, height: 153, radius: 10 };
@@ -59,6 +60,7 @@ export class MeaningResultScreen extends BaseScreen {
 
   build(): void {
     const meaningScrollBox = this.createMeaningScrollBox();
+    const closeButton = createCircleSymbolButton({ centerX: 729, centerY: 656, symbol: '✕', symbolSize: 54 });
 
     this.view.addChild(
       createOracleCardFrame(),
@@ -70,10 +72,12 @@ export class MeaningResultScreen extends BaseScreen {
         starsColor: FIGMA_COLORS.accent,
       }),
       meaningScrollBox,
-      createCircleSymbolButton({ centerX: 729, centerY: 656, symbol: '✕', symbolSize: 54 }),
+      closeButton,
     );
 
-    this.view.addChild(createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack()));
+    this.view.addChild(
+      createClickArea(CLOSE_BUTTON_BOUNDS, () => this.uiManager.goBack(), { animateTarget: closeButton }),
+    );
   }
 
   private createMeaningScrollBox(): Container {
@@ -260,36 +264,36 @@ export class MeaningResultScreen extends BaseScreen {
     onClick: () => void,
   ): Container {
     const button = new Container();
+    button.position.set(centerX, centerY);
 
-    const body = new Graphics().circle(centerX, centerY, SCROLL_BUTTON_RADIUS).fill(0xa62b30);
+    const body = new Graphics().circle(0, 0, SCROLL_BUTTON_RADIUS).fill(0xa62b30);
     const trianglePoints =
       direction === 'up'
         ? [
-            centerX,
-            centerY - ARROW_HALF_HEIGHT,
-            centerX + ARROW_HALF_WIDTH,
-            centerY + ARROW_HALF_HEIGHT,
-            centerX - ARROW_HALF_WIDTH,
-            centerY + ARROW_HALF_HEIGHT,
+            0,
+            -ARROW_HALF_HEIGHT,
+            ARROW_HALF_WIDTH,
+            ARROW_HALF_HEIGHT,
+            -ARROW_HALF_WIDTH,
+            ARROW_HALF_HEIGHT,
           ]
         : [
-            centerX,
-            centerY + ARROW_HALF_HEIGHT,
-            centerX + ARROW_HALF_WIDTH,
-            centerY - ARROW_HALF_HEIGHT,
-            centerX - ARROW_HALF_WIDTH,
-            centerY - ARROW_HALF_HEIGHT,
+            0,
+            ARROW_HALF_HEIGHT,
+            ARROW_HALF_WIDTH,
+            -ARROW_HALF_HEIGHT,
+            -ARROW_HALF_WIDTH,
+            -ARROW_HALF_HEIGHT,
           ];
     const icon = new Graphics().poly(trianglePoints).fill(FIGMA_COLORS.textLight);
 
     const hitArea = new Graphics()
-      .circle(centerX, centerY, SCROLL_BUTTON_RADIUS + 2)
+      .circle(0, 0, SCROLL_BUTTON_RADIUS + 2)
       .fill({ color: 0xffffff, alpha: 0.001 });
-    hitArea.eventMode = 'static';
-    hitArea.cursor = 'pointer';
-    hitArea.on('pointertap', onClick);
+    bindPressable(hitArea, button, onClick, { pressedOffsetY: 1.4, animationDurationMs: 90 });
 
     button.addChild(body, icon, hitArea);
     return button;
   }
 }
+

@@ -1,4 +1,5 @@
-import { FederatedPointerEvent, Graphics } from 'pixi.js';
+import { Container, Graphics } from 'pixi.js';
+import { bindPressable, type PressableOptions } from './pressable';
 
 export type ClickAreaBounds = {
   x: number;
@@ -7,15 +8,26 @@ export type ClickAreaBounds = {
   height: number;
 };
 
-export function createClickArea(bounds: ClickAreaBounds, onClick: () => void): Graphics {
+type ClickAreaOptions = {
+  animateTarget?: Container | Graphics;
+  pressable?: PressableOptions;
+};
+
+export function createClickArea(bounds: ClickAreaBounds, onClick: () => void, options?: ClickAreaOptions): Graphics {
   const area = new Graphics().rect(bounds.x, bounds.y, bounds.width, bounds.height).fill({
     color: 0xffffff,
     alpha: 0.001,
   });
 
+  const animationTarget = options?.animateTarget;
+  if (animationTarget) {
+    bindPressable(area, animationTarget, onClick, options?.pressable);
+    return area;
+  }
+
   area.eventMode = 'static';
   area.cursor = 'pointer';
-  area.on('pointertap', (_event: FederatedPointerEvent) => onClick());
+  area.on('pointertap', onClick);
 
   return area;
 }
