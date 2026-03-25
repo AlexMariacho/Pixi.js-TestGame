@@ -76,9 +76,3 @@ npm run test:visual
 - [docs/ui-layout-coordinates.md](./docs/ui-layout-coordinates.md)
 - [docs/figma-sync.md](./docs/figma-sync.md)
 - [docs/testing.md](./docs/testing.md)
-
-## Примечания
-
-- Используйте Node.js LTS.
-- В проекте приняты `UTF-8` и `CRLF`.
-- При изменениях UI обновляйте соответствующие Playwright-тесты и snapshot baselines только если дизайн изменился намеренно.
