@@ -13,7 +13,7 @@ The app does not draw the full UI procedurally anymore. It depends on four artif
 1. `src/assets/figma/coordinates.template.json`
 2. `src/assets/figma/page-0-1.raw.json`
 3. `src/assets/textures/figma/desktop-elements-svg/*.svg`
-4. CSV/JSON manifests inside `src/assets/textures/figma/desktop-elements-svg/`
+4. CSV manifests inside `src/assets/textures/figma/desktop-elements-svg/` (runtime uses `elements-index.csv` and `duplicates-map.csv`)
 
 `figmaCsvScene.ts` reads these artifacts together to reconstruct desktop frame scenes at runtime.
 
@@ -23,7 +23,7 @@ The app does not draw the full UI procedurally anymore. It depends on four artif
 2. Refresh `src/assets/figma/page-0-1.raw.json` from the current page node.
 3. Refresh `src/assets/figma/coordinates.template.json` from exported Figma node geometry.
 4. Re-export changed SVG assets into `src/assets/textures/figma/desktop-elements-svg/`.
-5. Refresh export manifests (`elements-index.*`, `duplicates-map.*`, `export-manifest.json`) so node IDs still match assets.
+5. Refresh export manifests so node IDs still match assets. At minimum keep `elements-index.csv` and `duplicates-map.csv` in sync with exported SVG files; update JSON manifests only if your export tooling requires them.
 6. Update `src/assets/figma/ui-decisions.md` if mapping assumptions changed.
 7. Only after artifacts are current, adjust screen/layout constants in `src/ui/screens/*` or `src/ui/components/*`.
 

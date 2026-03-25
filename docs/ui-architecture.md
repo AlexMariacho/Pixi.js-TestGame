@@ -50,7 +50,7 @@
 - `UIManager.show(id)` navigates forward and pushes the current screen into history.
 - `UIManager.goBack()` pops history and returns to the previous screen.
 - Unknown screen IDs throw `Screen not registered`.
-- Navigations are queued if a transition is already running.
+- If a transition is running, the latest navigation request is deferred and executed after the transition finishes.
 
 ## Transition behavior
 

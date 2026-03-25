@@ -22,7 +22,7 @@ This guide describes the current automated checks for UI rendering and interacti
 - Desktop 4 screenshot baseline
 - Hover feedback on the main screen select button
 - Meaning screen scroll interaction changes the viewport
-- Navigation timing through the current animated transitions
+- Navigation flow through the current animated transitions
 
 ## When to run visual tests
 
