@@ -3,12 +3,13 @@ import type { UIManager } from '../manager/UIManager';
 import { BaseScreen } from './BaseScreen';
 import { createClickArea } from '../components/ClickArea';
 import { DESKTOP_3 } from './desktopFrames';
-import { FIGMA_COLORS, FIGMA_FONTS } from '../components/designTokens';
-
-const DISPATCHER_RESULT_WINDOW_OFFSET = { x: 9, y: 3 } as const;
-const TITLE_BOUNDS = { x: 521, y: 400 } as const;
-const TITLE_TEXT = 'Добрый вечер';
-const RESULT_LABEL_BOUNDS = { x: 613, y: 469 } as const;
+import { SCREEN_TEXT } from './screenText';
+import { SCREEN_TEXT_STYLES } from '../components/screenTextStyles';
+import {
+  DISPATCHER_RESULT_SCREEN_LAYOUT,
+  RESULT_SCREEN_TITLE_BOUNDS,
+  RESULT_SCREEN_TITLE_TEXT,
+} from './resultScreenLayout';
 
 export class DispatcherResultScreen extends BaseScreen {
   constructor(private readonly uiManager: UIManager) {
@@ -18,28 +19,18 @@ export class DispatcherResultScreen extends BaseScreen {
   build(): void {
     const frameScene = DESKTOP_3.buildScene();
     const titleLabel = new Text({
-      text: TITLE_TEXT,
-      style: {
-        fontFamily: FIGMA_FONTS.heading,
-        fontSize: 48,
-        fill: FIGMA_COLORS.textDark,
-        fontWeight: '400',
-      },
+      text: RESULT_SCREEN_TITLE_TEXT,
+      style: SCREEN_TEXT_STYLES.titleDark48,
     });
-    titleLabel.position.set(TITLE_BOUNDS.x, TITLE_BOUNDS.y);
+    titleLabel.position.set(RESULT_SCREEN_TITLE_BOUNDS.x, RESULT_SCREEN_TITLE_BOUNDS.y);
 
     const resultLabel = new Text({
-      text: 'вот и думайте',
-      style: {
-        fontFamily: FIGMA_FONTS.body,
-        fontSize: 48,
-        fill: FIGMA_COLORS.textDark,
-        fontWeight: '400',
-      },
+      text: SCREEN_TEXT.dispatcherResult,
+      style: SCREEN_TEXT_STYLES.bodyDark48,
     });
     resultLabel.position.set(
-      RESULT_LABEL_BOUNDS.x - DISPATCHER_RESULT_WINDOW_OFFSET.x,
-      RESULT_LABEL_BOUNDS.y - DISPATCHER_RESULT_WINDOW_OFFSET.y,
+      DISPATCHER_RESULT_SCREEN_LAYOUT.resultLabelBounds.x - DISPATCHER_RESULT_SCREEN_LAYOUT.windowOffset.x,
+      DISPATCHER_RESULT_SCREEN_LAYOUT.resultLabelBounds.y - DISPATCHER_RESULT_SCREEN_LAYOUT.windowOffset.y,
     );
 
     const closeButtonNode = frameScene.nodes.get(DESKTOP_3.elements.closeButtonGroup.nodeId);
@@ -50,7 +41,7 @@ export class DispatcherResultScreen extends BaseScreen {
       this.view.addChild(closeButtonSprite);
     }
 
-    const closeButtonBounds = closeButtonNode?.bounds ?? { x: 704, y: 631, width: 50, height: 50 };
+    const closeButtonBounds = closeButtonNode?.bounds ?? DISPATCHER_RESULT_SCREEN_LAYOUT.closeButtonBounds;
     this.view.addChild(
       createClickArea(
         closeButtonBounds,

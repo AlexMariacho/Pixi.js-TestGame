@@ -2,6 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 const RIGHT_ARROW_CENTER = { x: 894, y: 595 };
 const SELECT_BUTTON_CENTER = { x: 720, y: 595 };
+const SCROLL_DOWN_CENTER = { x: 863, y: 605 };
 const TRANSITION_WAIT_MS = 260;
 
 async function openMainScreen(page: Page): Promise<void> {
@@ -101,4 +102,30 @@ test('screen 4 matches Desktop - 4', async ({ page }) => {
     caret: 'hide',
     maxDiffPixelRatio: 0.001,
   });
+});
+
+test('meaning screen scroll buttons change the viewport', async ({ page }) => {
+  await openMainScreen(page);
+
+  await page.mouse.click(RIGHT_ARROW_CENTER.x, RIGHT_ARROW_CENTER.y);
+  await page.waitForTimeout(100);
+  await page.mouse.click(SELECT_BUTTON_CENTER.x, SELECT_BUTTON_CENTER.y);
+  await page.waitForTimeout(TRANSITION_WAIT_MS);
+  await clearHoverState(page);
+
+  const canvas = page.locator('canvas');
+  const beforeScroll = await canvas.screenshot({
+    animations: 'disabled',
+    caret: 'hide',
+  });
+
+  await page.mouse.click(SCROLL_DOWN_CENTER.x, SCROLL_DOWN_CENTER.y);
+  await page.waitForTimeout(120);
+
+  const afterScroll = await canvas.screenshot({
+    animations: 'disabled',
+    caret: 'hide',
+  });
+
+  expect(afterScroll.equals(beforeScroll)).toBe(false);
 });

@@ -1,4 +1,8 @@
 import { buildFrameScene, createNodeSprite } from '../components/figmaCsvScene';
+import {
+  DISPATCHER_RESULT_SCREEN_LAYOUT,
+  MEANING_RESULT_SCREEN_LAYOUT,
+} from './resultScreenLayout';
 
 type FrameElement = {
   nodeId: string;
@@ -65,13 +69,6 @@ class DesktopFrame<T extends ElementMap> {
   }
 }
 
-const DISPATCHER_RESULT_WINDOW_OFFSET = { x: 9, y: 3 } as const;
-const DISPATCHER_RESULT_LOGO_OFFSET = { x: 10, y: -3 } as const;
-const DISPATCHER_RESULT_STARS_OFFSET = { x: 10, y: 3 } as const;
-const MEANING_RESULT_WINDOW_OFFSET = { x: 9, y: -7 } as const;
-const MEANING_RESULT_LOGO_OFFSET = { x: 10, y: -3 } as const;
-const MEANING_RESULT_STARS_OFFSET = { x: 10, y: 3 } as const;
-
 const desktop1Elements = {
   background: '1:26',
   cardFrame: '1:58',
@@ -94,20 +91,20 @@ const desktop3Elements = {
   background: '1:44',
   cardFrame: {
     nodeId: '1:165',
-    positionOffset: DISPATCHER_RESULT_WINDOW_OFFSET,
+    positionOffset: DISPATCHER_RESULT_SCREEN_LAYOUT.windowOffset,
   },
   resultBadgeGroup: {
     nodeId: '1:87',
-    positionOffset: DISPATCHER_RESULT_LOGO_OFFSET,
+    positionOffset: DISPATCHER_RESULT_SCREEN_LAYOUT.logoOffset,
   },
   decorationGroup: {
     nodeId: '1:101',
-    positionOffset: DISPATCHER_RESULT_STARS_OFFSET,
+    positionOffset: DISPATCHER_RESULT_SCREEN_LAYOUT.starsOffset,
   },
   closeButtonGroup: {
     nodeId: '25:2',
     assetNodeId: '23:12',
-    positionOffset: DISPATCHER_RESULT_WINDOW_OFFSET,
+    positionOffset: DISPATCHER_RESULT_SCREEN_LAYOUT.windowOffset,
   },
 } as const;
 
@@ -115,27 +112,27 @@ const desktop4Elements = {
   background: '1:116',
   unionShape: {
     nodeId: '1:170',
-    positionOffset: MEANING_RESULT_WINDOW_OFFSET,
+    positionOffset: MEANING_RESULT_SCREEN_LAYOUT.windowOffset,
   },
   resultBadgeGroup: {
     nodeId: '1:125',
-    positionOffset: MEANING_RESULT_LOGO_OFFSET,
+    positionOffset: MEANING_RESULT_SCREEN_LAYOUT.logoOffset,
   },
   textViewportRect: {
     nodeId: '1:102',
-    positionOffset: MEANING_RESULT_WINDOW_OFFSET,
+    positionOffset: MEANING_RESULT_SCREEN_LAYOUT.windowOffset,
   },
   scrollbarGroup: {
     nodeId: '1:147',
-    positionOffset: MEANING_RESULT_WINDOW_OFFSET,
+    positionOffset: MEANING_RESULT_SCREEN_LAYOUT.windowOffset,
   },
   decorationGroup: {
     nodeId: '1:121',
-    positionOffset: MEANING_RESULT_STARS_OFFSET,
+    positionOffset: MEANING_RESULT_SCREEN_LAYOUT.starsOffset,
   },
   closeButtonGroup: {
     nodeId: '23:12',
-    positionOffset: MEANING_RESULT_WINDOW_OFFSET,
+    positionOffset: MEANING_RESULT_SCREEN_LAYOUT.windowOffset,
   },
 } as const;
 
