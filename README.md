@@ -1,14 +1,15 @@
 # Pixi.js Test Game
 
-Небольшой проект-игра на [Pixi.js](https://pixijs.com/).
+Небольшое UI-приложение на [Pixi.js](https://pixijs.com/) с навигацией между экранами и визуалами, собранными из экспортов Figma.
 
 ## Стек
 
 - Pixi.js
 - TypeScript
-- Node.js (для локального запуска и сборки)
+- Vite
+- Playwright
 
-## Быстрый старт
+## Запуск приложения
 
 1. Установите зависимости:
 
@@ -16,41 +17,68 @@
 npm install
 ```
 
-2. Запустите проект в режиме разработки:
+2. Запустите приложение в режиме разработки:
 
 ```bash
 npm run dev
 ```
 
-3. Сборка production-версии:
+После запуска Vite покажет локальный адрес приложения в терминале.
 
-```bash
-npm run build
-```
+## Полезные команды
 
-4. Проверка типов:
+- Проверка типов:
 
 ```bash
 npm run check
 ```
 
-5. Локальный предпросмотр сборки:
+- Production-сборка:
+
+```bash
+npm run build
+```
+
+- Локальный просмотр production-сборки:
 
 ```bash
 npm run preview
 ```
 
-## Структура
+- Визуальные тесты:
 
-```text
-src/
-  app/      инициализация Pixi-приложения и bootstrap
-  ui/       экраны, менеджер экранов, общие UI-компоненты
-  assets/   текстуры, шрифты, figma-артефакты
-  utils/    небольшие переиспользуемые хелперы
+```bash
+npm run test:visual
 ```
+
+## Структура проекта
+
+- `src/app/` — bootstrap приложения и инициализация Pixi
+- `src/assets/` — Figma-артефакты, экспортированные текстуры, шрифты и звуки
+- `src/ui/manager/` — регистрация экранов и навигация
+- `src/ui/screens/` — экраны и screen-specific данные
+- `src/ui/components/` — общие UI-компоненты, интерактивность, типографика и rendering helpers
+- `src/ui/transitions/` — переходы между экранами
+- `src/utils/` — общие вспомогательные функции
+- `tests/e2e/` — визуальные и interaction regression tests
+- `docs/` — документация по архитектуре, layout, Figma sync и тестированию
+
+## Примечание по Figma и pixel-perfect
+
+В исходной Figma были расхождения в координатах главного блока на экранах `Desktop-3` и `Desktop-4`, поэтому для более точного позиционирования была создана отдельная ветка `PixelPerfect`.
+
+В этой ветке расположение элементов выверено точнее, чем в финальном варианте текущей основной реализации.
+
+## Документация
+
+- [AGENTS.md](./AGENTS.md)
+- [docs/ui-architecture.md](./docs/ui-architecture.md)
+- [docs/ui-layout-coordinates.md](./docs/ui-layout-coordinates.md)
+- [docs/figma-sync.md](./docs/figma-sync.md)
+- [docs/testing.md](./docs/testing.md)
 
 ## Примечания
 
 - Используйте Node.js LTS.
-- Для проверки типов используйте `npm run check`.
+- В проекте приняты `UTF-8` и `CRLF`.
+- При изменениях UI обновляйте соответствующие Playwright-тесты и snapshot baselines только если дизайн изменился намеренно.
