@@ -1,7 +1,22 @@
 import { Container } from 'pixi.js';
 import type { ScreenId } from './screenIds';
+import { SCREEN_IDS } from './screenIds';
 import type { BaseScreen } from '../screens/BaseScreen';
 import { FIGMA_LAYOUT } from '../components/designTokens';
+import { fadeTransition } from '../transitions/fadeTransition';
+import type { TransitionDirection } from '../transitions/fadeTransition';
+
+type PendingNavigation = {
+  id: ScreenId;
+  saveHistory: boolean;
+};
+
+const ANIMATED_SCREEN_IDS = new Set<ScreenId>([
+  SCREEN_IDS.main,
+  SCREEN_IDS.dispatcherResult,
+  SCREEN_IDS.meaningResult,
+]);
+const TRANSITION_DURATION_MS = 220;
 
 export class UIManager {
   private readonly root: Container;
@@ -10,6 +25,8 @@ export class UIManager {
   private readonly history: ScreenId[] = [];
 
   private currentId: ScreenId | null = null;
+  private isTransitioning = false;
+  private pendingNavigation: PendingNavigation | null = null;
 
   constructor(root: Container) {
     this.root = root;
@@ -24,7 +41,7 @@ export class UIManager {
   }
 
   show(id: ScreenId): void {
-    this.showInternal(id, true);
+    this.navigate(id, true);
   }
 
   goBack(): void {
@@ -33,28 +50,62 @@ export class UIManager {
       return;
     }
 
-    this.showInternal(prev, false);
+    this.navigate(prev, false);
   }
 
-  private showInternal(id: ScreenId, saveHistory: boolean): void {
+  private navigate(id: ScreenId, saveHistory: boolean): void {
+    if (this.isTransitioning) {
+      this.pendingNavigation = { id, saveHistory };
+      return;
+    }
+
+    void this.showInternal(id, saveHistory);
+  }
+
+  private async showInternal(id: ScreenId, saveHistory: boolean): Promise<void> {
     if (this.currentId === id) {
       return;
     }
 
-    if (this.currentId && saveHistory) {
-      const current = this.instances.get(this.currentId);
-      current?.hide();
-      this.history.push(this.currentId);
-    } else if (this.currentId) {
-      const current = this.instances.get(this.currentId);
-      current?.hide();
+    this.isTransitioning = true;
+
+    try {
+      const previousId = this.currentId;
+      const previousScreen = previousId ? this.instances.get(previousId) ?? null : null;
+      const nextScreen = this.getOrCreate(id);
+
+      if (previousId && saveHistory) {
+        this.history.push(previousId);
+      }
+
+      nextScreen.view.alpha = 1;
+      this.root.addChild(nextScreen.view);
+      nextScreen.show();
+
+      if (previousId && previousScreen) {
+        if (this.canAnimateTransition(previousId, id)) {
+          await fadeTransition(
+            previousScreen.view,
+            nextScreen.view,
+            TRANSITION_DURATION_MS,
+            this.resolveTransitionDirection(previousId, id),
+          );
+        }
+
+        previousScreen.hide();
+      }
+
+      nextScreen.view.alpha = 1;
+      this.currentId = id;
+    } finally {
+      this.isTransitioning = false;
+
+      if (this.pendingNavigation) {
+        const pending = this.pendingNavigation;
+        this.pendingNavigation = null;
+        this.navigate(pending.id, pending.saveHistory);
+      }
     }
-
-    const screen = this.getOrCreate(id);
-    this.root.addChild(screen.view);
-    screen.show();
-
-    this.currentId = id;
   }
 
   private getOrCreate(id: ScreenId): BaseScreen {
@@ -80,5 +131,17 @@ export class UIManager {
     const screenCenterY = bounds.y + bounds.height / 2;
     const layoutCenterY = FIGMA_LAYOUT.appHeight / 2;
     screen.view.y += layoutCenterY - screenCenterY;
+  }
+
+  private canAnimateTransition(fromId: ScreenId, toId: ScreenId): boolean {
+    return ANIMATED_SCREEN_IDS.has(fromId) && ANIMATED_SCREEN_IDS.has(toId);
+  }
+
+  private resolveTransitionDirection(fromId: ScreenId, toId: ScreenId): TransitionDirection {
+    if (toId === SCREEN_IDS.main && fromId !== SCREEN_IDS.main) {
+      return 'backward';
+    }
+
+    return 'forward';
   }
 }
