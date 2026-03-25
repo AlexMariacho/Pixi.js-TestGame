@@ -16,7 +16,7 @@ const SELECT_BUTTON_LABEL_BOUNDS = { x: 638, y: 582 };
 const DISPATCHER_ROLE_BOUNDS = { x: 627, y: 469 };
 const MEANING_ROLE_BOUNDS = { x: 596, y: 469 };
 
-const TITLE_TEXT = 'ДОБРЫЙ ВЕЧЕР';
+const TITLE_TEXT = 'Добрый вечер';
 const SELECT_BUTTON_TEXT = 'ВЫБРАТЬ';
 const DISPATCHER_ROLE_TEXT = 'я диспетчер';
 const MEANING_ROLE_TEXT = 'а что это значит?';

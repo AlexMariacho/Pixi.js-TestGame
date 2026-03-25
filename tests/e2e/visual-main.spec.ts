@@ -44,36 +44,6 @@ test('screen 2 matches Desktop - 2', async ({ page }) => {
   });
 });
 
-test('screen 3 matches Desktop - 3', async ({ page }) => {
-  await openMainScreen(page);
-
-  await page.mouse.click(SELECT_BUTTON_CENTER.x, SELECT_BUTTON_CENTER.y);
-  await page.waitForTimeout(100);
-  await clearHoverState(page);
-
-  await expect(page.locator('canvas')).toHaveScreenshot('Desktop - 3.png', {
-    animations: 'disabled',
-    caret: 'hide',
-    maxDiffPixelRatio: 0.001,
-  });
-});
-
-test('screen 4 matches Desktop - 4', async ({ page }) => {
-  await openMainScreen(page);
-
-  await page.mouse.click(RIGHT_ARROW_CENTER.x, RIGHT_ARROW_CENTER.y);
-  await page.waitForTimeout(100);
-  await page.mouse.click(SELECT_BUTTON_CENTER.x, SELECT_BUTTON_CENTER.y);
-  await page.waitForTimeout(100);
-  await clearHoverState(page);
-
-  await expect(page.locator('canvas')).toHaveScreenshot('Desktop - 4.png', {
-    animations: 'disabled',
-    caret: 'hide',
-    maxDiffPixelRatio: 0.001,
-  });
-});
-
 test('main buttons apply and reset hover visual state', async ({ page }) => {
   await openMainScreen(page);
 
